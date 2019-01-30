@@ -134,7 +134,7 @@ void KbdRptParser::OnControlKeysChanged(uint8_t before, uint8_t after) {  //hand
   }
 
   if (beforeMod.bmRightShift != afterMod.bmRightShift) { //RSHIFT CHANGED
-    HandleKeyCode( RSHFT, beforeMod.bmRightCtrl < afterMod.bmRightCtrl );
+    HandleKeyCode( RSHFT, beforeMod.bmRightShift < afterMod.bmRightShift );
   }
 
   if (beforeMod.bmRightAlt != afterMod.bmRightAlt) { //RALT CHANGED
@@ -144,66 +144,14 @@ void KbdRptParser::OnControlKeysChanged(uint8_t before, uint8_t after) {  //hand
   if (beforeMod.bmRightGUI != afterMod.bmRightGUI) { //RGUI CHANGED
     HandleKeyCode( RGUI, beforeMod.bmRightGUI < afterMod.bmRightGUI );
   }
-
-/*
-  if (beforeMod.bmLeftCtrl < afterMod.bmLeftCtrl) { //LCTRL PRESSED
-    HandleKeyCode(LCTRL, true);
-  }
-  else if (beforeMod.bmLeftCtrl > afterMod.bmLeftCtrl) {  //LCTRL RELEASED
-    HandleKeyCode(LCTRL, false);
-  }
-  if (beforeMod.bmLeftShift < afterMod.bmLeftShift) { //LSHIFT PRESSED
-    HandleKeyCode(LSHFT, true);
-  }
-  else if (beforeMod.bmLeftShift > afterMod.bmLeftShift) {  //LSHFT RELEASED
-    HandleKeyCode(LSHFT, false);
-  }
-  if (beforeMod.bmLeftAlt < afterMod.bmLeftAlt) { //LALT PRESSED
-    HandleKeyCode(LALT, true);
-  }
-  else if (beforeMod.bmLeftAlt > afterMod.bmLeftAlt) {  //LALT RELEASED
-    HandleKeyCode(LALT, false);
-  }
-  if (beforeMod.bmLeftGUI < afterMod.bmLeftGUI) { //LGUI PRESSED
-    HandleKeyCode(LGUI, true);
-  }
-  else if (beforeMod.bmLeftGUI > afterMod.bmLeftGUI) {  //LGUI RELEASED
-    HandleKeyCode(LGUI, false);
-  }
-
-  if (beforeMod.bmRightCtrl < afterMod.bmRightCtrl) { //RCTRL PRESSED
-    HandleKeyCode(RCTRL, true);
-  }
-  else if (beforeMod.bmRightCtrl > afterMod.bmRightCtrl) {  //RCTRL RELEASED
-    HandleKeyCode(RCTRL, false);
-  }
-  if (beforeMod.bmRightShift < afterMod.bmRightShift) { //RSHIFT PRESSED
-    HandleKeyCode(RSHFT, true);
-  }
-  else if (beforeMod.bmRightShift > afterMod.bmRightShift) {  //RSHFT RELEASED
-    HandleKeyCode(RSHFT, false);
-  }
-  if (beforeMod.bmRightAlt < afterMod.bmRightAlt) { //RALT PRESSED
-    HandleKeyCode(RALT, true);
-  }
-  else if (beforeMod.bmRightAlt > afterMod.bmRightAlt) {  //RALT RELEASED
-    HandleKeyCode(RALT, false);
-  }
-  if (beforeMod.bmRightGUI < afterMod.bmRightGUI) { //RGUI PRESSED
-    HandleKeyCode(RGUI, true);
-  }
-  else if (beforeMod.bmRightGUI > afterMod.bmRightGUI) {  //RGUI RELEASED
-    HandleKeyCode(RGUI, false);
-  }
-*/
 }
 
 bool active = true;       //if arduino needs to be reprogrammed but keystrokes are getting in the way
 //uint8_t lockLeds = 0;     //represents what LEDs should be on
 unsigned long timer = 0;
 unsigned long debounce[SWITCHPINS];
-bool exSwitchBefore[SWITCHPINS];  //keeps track of switch presses
-bool exSwitch[SWITCHPINS];  //keeps track of switch presses
+bool exSwprev[SWITCHPINS];  //keeps track of switch presses
+bool exSw[SWITCHPINS];  //keeps track of switch presses
 //standard layout:
 //uint8_t keyToSend[] = {KEY_LEFT_CTRL, KEY_LEFT_SHIFT, KEY_LEFT_ALT, KEY_LEFT_GUI, KEY_A, KEY_B, KEY_C, KEY_D, KEY_E, KEY_F, KEY_G, KEY_H, KEY_I, KEY_J, KEY_K, KEY_L, KEY_M, KEY_N, KEY_O, KEY_P, KEY_Q, KEY_R, KEY_S, KEY_T, KEY_U, KEY_V, KEY_W, KEY_X, KEY_Y, KEY_Z, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_ENTER, KEY_ESC, KEY_BACKSPACE, KEY_TAB, KEY_SPACE, KEY_MINUS, KEY_EQUAL, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, KEY_BACKSLASH, 0x00, KEY_SEMICOLON, KEY_QUOTE, KEY_TILDE, KEY_COMMA, KEY_PERIOD, KEY_SLASH, KEY_CAPS_LOCK, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_F11, KEY_F12, KEY_PRINT, KEY_SCROLL_LOCK, KEY_PAUSE, KEY_INSERT, KEY_HOME, KEY_PAGE_UP, KEY_DELETE, KEY_END, KEY_PAGE_DOWN, KEY_RIGHT_ARROW, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_UP_ARROW, KEY_NUM_LOCK, KEYPAD_DIVIDE, KEYPAD_MULTIPLY, KEYPAD_SUBTRACT, KEYPAD_ADD, KEYPAD_ENTER, KEYPAD_1, KEYPAD_2, KEYPAD_3, KEYPAD_4, KEYPAD_5, KEYPAD_6, KEYPAD_7, KEYPAD_8, KEYPAD_9, KEYPAD_0, KEYPAD_DOT, 0x00, KEY_APPLICATION, KEY_RIGHT_CTRL, KEY_RIGHT_SHIFT, KEY_RIGHT_ALT, KEY_RIGHT_GUI};
 /*
@@ -222,8 +170,8 @@ void setup() {
   pinMode(ACTIVEPIN, INPUT_PULLUP);
   for (int i = 0; i < SWITCHPINS; i++)
   {
-    exSwitch[i] = false;
-    exSwitchBefore[i] = false;
+    exSw[i] = false;
+    exSwprev[i] = false;
     debounce[i] = 0;
     pinMode(switchPins[i], INPUT_PULLUP);
   }
@@ -244,28 +192,25 @@ void setup() {
 
 void loop() {
   active =  digitalRead(ACTIVEPIN);
-  timer = millis();
   if (!active) //if pin13 is grounded, disable keyboard
   {
     BootKeyboard.end();
     while(true);
   }
 
-    for (int i = 0; i < SWITCHPINS; i++)    //iterate through pins
+  for (int i = 0; i < SWITCHPINS; i++) //iterate through pins
+  {
+    if ((millis() - debounce[i]) > DBINTERVAL) //ignore in debounce interval
     {
-      if ((timer - debounce[i]) > DBINTERVAL)   //ignore in debounce interval
+      exSw[i] = !digitalRead(switchPins[i]); //record current state
+      debounce[i] = timer; //reset debounce timer
+      if (exSw[i] != exSwprev) //if switch state changes
       {
-        exSwitch[i] = !digitalRead(switchPins[i]);
-        debounce[i] = timer;
-      }
-
-      if(exSwitchBefore[i] != exSwitch[i])  //run if a switch has changed state
-      {
-        HandleKeyCode( (SW0 + i), (exSwitch[i]) ); //handle key at switch index with expression for pressed or released
-        exSwitchBefore[i] = exSwitch[i];  //record previous state
+        HandleKeyCode( (SW0 + i), (exSw[i]) ); //press/release
+        exSwprev[i] = exSw[i]; //record previous state
       }
     }
-    
-    Usb.Task();
-
+  }
+  
+  Usb.Task();
 }
