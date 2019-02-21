@@ -137,6 +137,20 @@
             this.rbL3 = new System.Windows.Forms.RadioButton();
             this.rbL4 = new System.Windows.Forms.RadioButton();
             this.rbL5 = new System.Windows.Forms.RadioButton();
+            this.cboKey = new System.Windows.Forms.ComboBox();
+            this.btnEx3 = new System.Windows.Forms.Button();
+            this.btnEx0 = new System.Windows.Forms.Button();
+            this.btnEx9 = new System.Windows.Forms.Button();
+            this.btnEx8 = new System.Windows.Forms.Button();
+            this.btnEx7 = new System.Windows.Forms.Button();
+            this.btnEx6 = new System.Windows.Forms.Button();
+            this.btnEx5 = new System.Windows.Forms.Button();
+            this.btnEx4 = new System.Windows.Forms.Button();
+            this.btnEx2 = new System.Windows.Forms.Button();
+            this.btnEx1 = new System.Windows.Forms.Button();
+            this.txtExport = new System.Windows.Forms.TextBox();
+            this.txtImport = new System.Windows.Forms.TextBox();
+            this.lblKey = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnA
@@ -1079,7 +1093,7 @@
             // 
             this.rbL1.AutoSize = true;
             this.rbL1.Checked = true;
-            this.rbL1.Location = new System.Drawing.Point(55, 442);
+            this.rbL1.Location = new System.Drawing.Point(49, 493);
             this.rbL1.Name = "rbL1";
             this.rbL1.Size = new System.Drawing.Size(60, 17);
             this.rbL1.TabIndex = 170;
@@ -1090,7 +1104,7 @@
             // rbL2
             // 
             this.rbL2.AutoSize = true;
-            this.rbL2.Location = new System.Drawing.Point(121, 442);
+            this.rbL2.Location = new System.Drawing.Point(115, 493);
             this.rbL2.Name = "rbL2";
             this.rbL2.Size = new System.Drawing.Size(60, 17);
             this.rbL2.TabIndex = 171;
@@ -1101,7 +1115,7 @@
             // rbL3
             // 
             this.rbL3.AutoSize = true;
-            this.rbL3.Location = new System.Drawing.Point(187, 442);
+            this.rbL3.Location = new System.Drawing.Point(181, 493);
             this.rbL3.Name = "rbL3";
             this.rbL3.Size = new System.Drawing.Size(60, 17);
             this.rbL3.TabIndex = 172;
@@ -1112,7 +1126,7 @@
             // rbL4
             // 
             this.rbL4.AutoSize = true;
-            this.rbL4.Location = new System.Drawing.Point(253, 442);
+            this.rbL4.Location = new System.Drawing.Point(247, 493);
             this.rbL4.Name = "rbL4";
             this.rbL4.Size = new System.Drawing.Size(60, 17);
             this.rbL4.TabIndex = 173;
@@ -1123,7 +1137,7 @@
             // rbL5
             // 
             this.rbL5.AutoSize = true;
-            this.rbL5.Location = new System.Drawing.Point(319, 442);
+            this.rbL5.Location = new System.Drawing.Point(313, 493);
             this.rbL5.Name = "rbL5";
             this.rbL5.Size = new System.Drawing.Size(60, 17);
             this.rbL5.TabIndex = 174;
@@ -1131,11 +1145,153 @@
             this.rbL5.Text = "Layer 5";
             this.rbL5.UseVisualStyleBackColor = true;
             // 
+            // cboKey
+            // 
+            this.cboKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboKey.FormattingEnabled = true;
+            this.cboKey.IntegralHeight = false;
+            this.cboKey.Location = new System.Drawing.Point(250, 548);
+            this.cboKey.Name = "cboKey";
+            this.cboKey.Size = new System.Drawing.Size(121, 24);
+            this.cboKey.TabIndex = 175;
+            // 
+            // btnEx3
+            // 
+            this.btnEx3.Location = new System.Drawing.Point(202, 419);
+            this.btnEx3.Name = "btnEx3";
+            this.btnEx3.Size = new System.Drawing.Size(50, 50);
+            this.btnEx3.TabIndex = 185;
+            this.btnEx3.Text = "3";
+            this.btnEx3.UseVisualStyleBackColor = true;
+            // 
+            // btnEx0
+            // 
+            this.btnEx0.Location = new System.Drawing.Point(34, 419);
+            this.btnEx0.Name = "btnEx0";
+            this.btnEx0.Size = new System.Drawing.Size(50, 50);
+            this.btnEx0.TabIndex = 184;
+            this.btnEx0.Text = "0";
+            this.btnEx0.UseVisualStyleBackColor = true;
+            // 
+            // btnEx9
+            // 
+            this.btnEx9.Location = new System.Drawing.Point(538, 419);
+            this.btnEx9.Name = "btnEx9";
+            this.btnEx9.Size = new System.Drawing.Size(50, 50);
+            this.btnEx9.TabIndex = 183;
+            this.btnEx9.Text = "9";
+            this.btnEx9.UseVisualStyleBackColor = true;
+            // 
+            // btnEx8
+            // 
+            this.btnEx8.Location = new System.Drawing.Point(482, 419);
+            this.btnEx8.Name = "btnEx8";
+            this.btnEx8.Size = new System.Drawing.Size(50, 50);
+            this.btnEx8.TabIndex = 182;
+            this.btnEx8.Text = "8";
+            this.btnEx8.UseVisualStyleBackColor = true;
+            // 
+            // btnEx7
+            // 
+            this.btnEx7.Location = new System.Drawing.Point(426, 419);
+            this.btnEx7.Name = "btnEx7";
+            this.btnEx7.Size = new System.Drawing.Size(50, 50);
+            this.btnEx7.TabIndex = 181;
+            this.btnEx7.Text = "7";
+            this.btnEx7.UseVisualStyleBackColor = true;
+            // 
+            // btnEx6
+            // 
+            this.btnEx6.Location = new System.Drawing.Point(370, 419);
+            this.btnEx6.Name = "btnEx6";
+            this.btnEx6.Size = new System.Drawing.Size(50, 50);
+            this.btnEx6.TabIndex = 180;
+            this.btnEx6.Text = "6";
+            this.btnEx6.UseVisualStyleBackColor = true;
+            // 
+            // btnEx5
+            // 
+            this.btnEx5.Location = new System.Drawing.Point(314, 419);
+            this.btnEx5.Name = "btnEx5";
+            this.btnEx5.Size = new System.Drawing.Size(50, 50);
+            this.btnEx5.TabIndex = 179;
+            this.btnEx5.Text = "5";
+            this.btnEx5.UseVisualStyleBackColor = true;
+            // 
+            // btnEx4
+            // 
+            this.btnEx4.Location = new System.Drawing.Point(258, 419);
+            this.btnEx4.Name = "btnEx4";
+            this.btnEx4.Size = new System.Drawing.Size(50, 50);
+            this.btnEx4.TabIndex = 178;
+            this.btnEx4.Text = "4";
+            this.btnEx4.UseVisualStyleBackColor = true;
+            // 
+            // btnEx2
+            // 
+            this.btnEx2.Location = new System.Drawing.Point(146, 419);
+            this.btnEx2.Name = "btnEx2";
+            this.btnEx2.Size = new System.Drawing.Size(50, 50);
+            this.btnEx2.TabIndex = 177;
+            this.btnEx2.Text = "2";
+            this.btnEx2.UseVisualStyleBackColor = true;
+            // 
+            // btnEx1
+            // 
+            this.btnEx1.Location = new System.Drawing.Point(90, 419);
+            this.btnEx1.Name = "btnEx1";
+            this.btnEx1.Size = new System.Drawing.Size(50, 50);
+            this.btnEx1.TabIndex = 176;
+            this.btnEx1.Text = "1";
+            this.btnEx1.UseVisualStyleBackColor = true;
+            // 
+            // txtExport
+            // 
+            this.txtExport.Location = new System.Drawing.Point(594, 419);
+            this.txtExport.Multiline = true;
+            this.txtExport.Name = "txtExport";
+            this.txtExport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtExport.Size = new System.Drawing.Size(380, 187);
+            this.txtExport.TabIndex = 186;
+            // 
+            // txtImport
+            // 
+            this.txtImport.Location = new System.Drawing.Point(986, 419);
+            this.txtImport.Multiline = true;
+            this.txtImport.Name = "txtImport";
+            this.txtImport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtImport.Size = new System.Drawing.Size(380, 187);
+            this.txtImport.TabIndex = 187;
+            // 
+            // lblKey
+            // 
+            this.lblKey.AutoSize = true;
+            this.lblKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKey.Location = new System.Drawing.Point(204, 548);
+            this.lblKey.Name = "lblKey";
+            this.lblKey.Size = new System.Drawing.Size(40, 17);
+            this.lblKey.TabIndex = 188;
+            this.lblKey.Text = "Key:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1431, 721);
+            this.Controls.Add(this.lblKey);
+            this.Controls.Add(this.txtImport);
+            this.Controls.Add(this.txtExport);
+            this.Controls.Add(this.btnEx3);
+            this.Controls.Add(this.btnEx0);
+            this.Controls.Add(this.btnEx9);
+            this.Controls.Add(this.btnEx8);
+            this.Controls.Add(this.btnEx7);
+            this.Controls.Add(this.btnEx6);
+            this.Controls.Add(this.btnEx5);
+            this.Controls.Add(this.btnEx4);
+            this.Controls.Add(this.btnEx2);
+            this.Controls.Add(this.btnEx1);
+            this.Controls.Add(this.cboKey);
             this.Controls.Add(this.rbL5);
             this.Controls.Add(this.rbL4);
             this.Controls.Add(this.rbL3);
@@ -1363,6 +1519,20 @@
         private System.Windows.Forms.RadioButton rbL3;
         private System.Windows.Forms.RadioButton rbL4;
         private System.Windows.Forms.RadioButton rbL5;
+        private System.Windows.Forms.ComboBox cboKey;
+        private System.Windows.Forms.Button btnEx3;
+        private System.Windows.Forms.Button btnEx0;
+        private System.Windows.Forms.Button btnEx9;
+        private System.Windows.Forms.Button btnEx8;
+        private System.Windows.Forms.Button btnEx7;
+        private System.Windows.Forms.Button btnEx6;
+        private System.Windows.Forms.Button btnEx5;
+        private System.Windows.Forms.Button btnEx4;
+        private System.Windows.Forms.Button btnEx2;
+        private System.Windows.Forms.Button btnEx1;
+        private System.Windows.Forms.TextBox txtExport;
+        private System.Windows.Forms.TextBox txtImport;
+        private System.Windows.Forms.Label lblKey;
     }
 }
 
