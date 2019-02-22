@@ -7,3 +7,4 @@ C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKe
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.csproj.CoreCompileInputs.cache
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.exe
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.pdb
+C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.csprojAssemblyReference.cache

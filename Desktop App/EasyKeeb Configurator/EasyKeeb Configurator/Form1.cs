@@ -12,9 +12,10 @@ namespace EasyKeeb_Configurator
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, uint> keycodes = new Dictionary<string, uint>();
+        Dictionary<string, int> keycodes = new Dictionary<string, int>();
+        Dictionary<string, int> keys = new Dictionary<string, int>();
 
-
+        string[] keymap = new string[300];
 
         public Form1()
         {
@@ -70,7 +71,7 @@ namespace EasyKeeb_Configurator
             keycodes.Add("[", 47);
             keycodes.Add("]", 48);
             keycodes.Add("\\", 49);
-            //keycodes.Ad, "NON_US_NUM", d();
+            //keycodes.Add("NON_US_NUM", 50);
             keycodes.Add(";", 51);
             keycodes.Add("'", 52);
             keycodes.Add("~", 53);
@@ -147,11 +148,130 @@ namespace EasyKeeb_Configurator
             keycodes.Add("Toggle Layer 8", 218);
             keycodes.Add("Toggle Layer 9", 219);
 
+            keys.Add("btnLCtrl",    106);
+            keys.Add("btnLSh",      1);
+            keys.Add("btnLAlt",     2);
+            keys.Add("btnLGUI",     3);
+            keys.Add("btnA",        4);
+            keys.Add("btnB",        5);
+            keys.Add("btnC",        6);
+            keys.Add("btnD",        7);
+            keys.Add("btnE",        8);
+            keys.Add("btnF",        9);
+            keys.Add("btnG",        10);
+            keys.Add("btnH",        11);
+            keys.Add("btnI",        12);
+            keys.Add("btnJ",        13);
+            keys.Add("btnK",        14);
+            keys.Add("btnL",        15);
+            keys.Add("btnM",        16);
+            keys.Add("btnN",        17);
+            keys.Add("btnO",        18);
+            keys.Add("btnP",        19);
+            keys.Add("btnQ",        20);
+            keys.Add("btnR",        21);
+            keys.Add("btnS",        22);
+            keys.Add("btnT",        23);
+            keys.Add("btnU",        24);
+            keys.Add("btnV",        25);
+            keys.Add("btnW",        26);
+            keys.Add("btnX",        27);
+            keys.Add("btnY",        28);
+            keys.Add("btnZ",        29);
+            keys.Add("btn1",        30);
+            keys.Add("btn2",        31);
+            keys.Add("btn3",        32);
+            keys.Add("btn4",        33);
+            keys.Add("btn5",        34);
+            keys.Add("btn6",        35);
+            keys.Add("btn7",        36);
+            keys.Add("btn8",        37);
+            keys.Add("btn9",        38);
+            keys.Add("btn0",        39);
+            keys.Add("btnEn",       40);
+            keys.Add("btnEsc",      41);
+            keys.Add("btnBsp",      42);
+            keys.Add("btnTab",      43);
+            keys.Add("btnSpc",      44);
+            keys.Add("btnMin",      45);
+            keys.Add("btnEql",      46);
+            keys.Add("btnLbr",      47);
+            keys.Add("btnRbr",      48);
+            keys.Add("btnBsl",      49);
+            keys.Add("btnScl",      51);
+            keys.Add("btnQuot",     52);
+            keys.Add("btnGrv",      53);
+            keys.Add("btnCom",      54);
+            keys.Add("btnPer",      55);
+            keys.Add("btnSlsh",     56);
+            keys.Add("btnCap",      57);
+            keys.Add("btnF1",       58);
+            keys.Add("btnF2",       59);
+            keys.Add("btnF3",       60);
+            keys.Add("btnF4",       61);
+            keys.Add("btnF5",       62);
+            keys.Add("btnF6",       63);
+            keys.Add("btnF7",       64);
+            keys.Add("btnF8",       65);
+            keys.Add("btnF9",       66);
+            keys.Add("btnF10",      67);
+            keys.Add("btnF11",      68);
+            keys.Add("btnF12",      69);
+            keys.Add("btnPrint",    70);
+            keys.Add("btnScrlLk",   71);
+            keys.Add("btnPause",    72);
+            keys.Add("btnIns",      73);
+            keys.Add("btnHm",       74);
+            keys.Add("btnPgUp",     75);
+            keys.Add("btnDel",      76);
+            keys.Add("btnEnd",      77);
+            keys.Add("btnPgDn",     78);
+            keys.Add("btnRight",    79);
+            keys.Add("btnLeft",     80);
+            keys.Add("btnDn",       81);
+            keys.Add("btnUp",       82);
+            keys.Add("btnNumLk",    83);
+            keys.Add("btnNumSlsh",  84);
+            keys.Add("btnNumStr",   85);
+            keys.Add("btnNumMin",   86);
+            keys.Add("btnNumPlus",  87);
+            keys.Add("btnNumEnt",   88);
+            keys.Add("btnNum1",     89);
+            keys.Add("btnNum2",     90);
+            keys.Add("btnNum3",     91);
+            keys.Add("btnNum4",     92);
+            keys.Add("btnNum5",     93);
+            keys.Add("btnNum6",     94);
+            keys.Add("btnNum7",     95);
+            keys.Add("btnNum8",     96);
+            keys.Add("btnNum9",     97);
+            keys.Add("btnNum0",     98);
+            keys.Add("btnNumPer",   99);
+            keys.Add("btnMenu",     101);
+            keys.Add("btnRCtrl",    102);
+            keys.Add("btnRSh",      103);
+            keys.Add("btnRAlt",     104);
+            keys.Add("btnRGUI",     105);
+            keys.Add("btnEx0",      106);
+            keys.Add("btnEx1",      107);
+            keys.Add("btnEx2",      108);
+            keys.Add("btnEx3",      109);
+            keys.Add("btnEx4",      110);
+            keys.Add("btnEx5",      111);
+            keys.Add("btnEx6",      112);
+            keys.Add("btnEx7",      113);
+            keys.Add("btnEx8",      114);
+            keys.Add("btnEx9",      115);
+
             cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach(KeyValuePair<string,uint> p in keycodes)
+            foreach(KeyValuePair<string,int> p in keycodes)
             {
                 cboKey.Items.Add(p.Key);
+                keymap[p.Value] = p.Key;
             }
+
+            lblKey.Text = keys[btnEx9.Name].ToString();
+            
 
         }
 

@@ -105,7 +105,7 @@
             this.btnScrLk = new System.Windows.Forms.Button();
             this.btnPrnt = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
-            this.button77 = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
             this.btnDn = new System.Windows.Forms.Button();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
@@ -846,14 +846,14 @@
             this.btnUp.Text = "↑";
             this.btnUp.UseVisualStyleBackColor = true;
             // 
-            // button77
+            // btnPause
             // 
-            this.button77.Location = new System.Drawing.Point(1036, 47);
-            this.button77.Name = "button77";
-            this.button77.Size = new System.Drawing.Size(50, 50);
-            this.button77.TabIndex = 140;
-            this.button77.Text = "Pause Break";
-            this.button77.UseVisualStyleBackColor = true;
+            this.btnPause.Location = new System.Drawing.Point(1036, 47);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(50, 50);
+            this.btnPause.TabIndex = 140;
+            this.btnPause.Text = "Pause Break";
+            this.btnPause.UseVisualStyleBackColor = true;
             // 
             // btnDn
             // 
@@ -1147,6 +1147,7 @@
             // 
             // cboKey
             // 
+            this.cboKey.Enabled = false;
             this.cboKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKey.FormattingEnabled = true;
             this.cboKey.IntegralHeight = false;
@@ -1326,7 +1327,7 @@
             this.Controls.Add(this.btnScrLk);
             this.Controls.Add(this.btnPrnt);
             this.Controls.Add(this.btnUp);
-            this.Controls.Add(this.button77);
+            this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnF11);
             this.Controls.Add(this.btnF10);
             this.Controls.Add(this.btnF9);
@@ -1487,7 +1488,7 @@
         private System.Windows.Forms.Button btnScrLk;
         private System.Windows.Forms.Button btnPrnt;
         private System.Windows.Forms.Button btnUp;
-        private System.Windows.Forms.Button button77;
+        private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnDn;
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnRight;
