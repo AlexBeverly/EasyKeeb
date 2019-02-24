@@ -148,8 +148,8 @@
             this.btnEx4 = new System.Windows.Forms.Button();
             this.btnEx2 = new System.Windows.Forms.Button();
             this.btnEx1 = new System.Windows.Forms.Button();
-            this.txtExport = new System.Windows.Forms.TextBox();
             this.txtImport = new System.Windows.Forms.TextBox();
+            this.txtExport = new System.Windows.Forms.TextBox();
             this.lblKey = new System.Windows.Forms.Label();
             this.lblImport = new System.Windows.Forms.Label();
             this.lblExport = new System.Windows.Forms.Label();
@@ -1483,25 +1483,25 @@
             this.btnEx1.UseVisualStyleBackColor = true;
             this.btnEx1.Click += new System.EventHandler(this.btnEx1_Click);
             // 
-            // txtExport
-            // 
-            this.txtExport.Location = new System.Drawing.Point(792, 536);
-            this.txtExport.Margin = new System.Windows.Forms.Padding(4);
-            this.txtExport.Multiline = true;
-            this.txtExport.Name = "txtExport";
-            this.txtExport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtExport.Size = new System.Drawing.Size(505, 229);
-            this.txtExport.TabIndex = 186;
-            // 
             // txtImport
             // 
-            this.txtImport.Location = new System.Drawing.Point(1317, 536);
+            this.txtImport.Location = new System.Drawing.Point(792, 536);
             this.txtImport.Margin = new System.Windows.Forms.Padding(4);
             this.txtImport.Multiline = true;
             this.txtImport.Name = "txtImport";
             this.txtImport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtImport.Size = new System.Drawing.Size(505, 229);
-            this.txtImport.TabIndex = 187;
+            this.txtImport.TabIndex = 186;
+            // 
+            // txtExport
+            // 
+            this.txtExport.Location = new System.Drawing.Point(1317, 536);
+            this.txtExport.Margin = new System.Windows.Forms.Padding(4);
+            this.txtExport.Multiline = true;
+            this.txtExport.Name = "txtExport";
+            this.txtExport.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtExport.Size = new System.Drawing.Size(505, 229);
+            this.txtExport.TabIndex = 187;
             // 
             // lblKey
             // 
@@ -1544,8 +1544,8 @@
             this.Controls.Add(this.lblExport);
             this.Controls.Add(this.lblImport);
             this.Controls.Add(this.lblKey);
-            this.Controls.Add(this.txtImport);
             this.Controls.Add(this.txtExport);
+            this.Controls.Add(this.txtImport);
             this.Controls.Add(this.btnEx3);
             this.Controls.Add(this.btnEx0);
             this.Controls.Add(this.btnEx9);
@@ -1796,8 +1796,8 @@
         private System.Windows.Forms.Button btnEx4;
         private System.Windows.Forms.Button btnEx2;
         private System.Windows.Forms.Button btnEx1;
-        private System.Windows.Forms.TextBox txtExport;
         private System.Windows.Forms.TextBox txtImport;
+        private System.Windows.Forms.TextBox txtExport;
         private System.Windows.Forms.Label lblKey;
         private System.Windows.Forms.Label lblImport;
         private System.Windows.Forms.Label lblExport;
