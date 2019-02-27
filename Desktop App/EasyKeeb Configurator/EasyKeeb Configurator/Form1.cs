@@ -18,10 +18,18 @@ namespace EasyKeeb_Configurator
         Dictionary<string, byte> keys = new Dictionary<string, byte>();
         Dictionary<string, byte> keyIndex = new Dictionary<string, byte>();
 
-        Dictionary<string,string> keymapStr = new Dictionary<string,string>();
+        Dictionary<string,string>[] keymapStr = new Dictionary<string, string>[]
+        {
+            new Dictionary<string, string>(),
+            new Dictionary<string, string>(),
+            new Dictionary<string, string>(),
+            new Dictionary<string, string>(),
+            new Dictionary<string, string>()
+        };
 
-        byte[] keymap = new byte[116];
+        byte[,] keymap = new byte[5,116];
         string curBtn = "";
+        int curLyr = 0;
 
         void BuildKeymapUI(Dictionary<string,string> kmap)
         {
@@ -43,12 +51,23 @@ namespace EasyKeeb_Configurator
             using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
             {
                 string s = reader.ReadToEnd();
+                //clear dictionaries
+                foreach (Dictionary<string,string> d in keymapStr) { d.Clear(); }
 
-                keymapStr.Clear();
-                keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>>(s);
-                BuildKeymapUI(keymapStr);
+                keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(s);
+                BuildKeymapUI(keymapStr[0]);
             }
-
+/*
+            //fill keymapStr
+            foreach(Button b in pnlKeys.Controls)
+            {
+                foreach(Dictionary<string,string> d in keymapStr)
+                {
+                    d.Clear();
+                    d.Add(b.Name, b.Text);
+                }
+            }
+*/
             //fill keycode dictionary - assigns key strings to their keycodes
             keycodes.Add("Left Ctrl", 106);
             keycodes.Add("Left Shift", 1);
@@ -428,13 +447,19 @@ namespace EasyKeeb_Configurator
             }
         }
 
-        void Export()
+        //fill dictionary for current layer
+        void GetLayerMap(int layer)
         {
-            keymapStr.Clear();
+            keymapStr[layer].Clear();
             foreach (Button b in pnlKeys.Controls)
             {
-                keymapStr.Add(b.Name, b.Text);
+                keymapStr[layer].Add(b.Name, b.Text);
             }
+        }
+
+        void Export()
+        {
+            GetLayerMap(curLyr);
             txtExport.Text = JsonConvert.SerializeObject(keymapStr);
         }
 
@@ -459,9 +484,11 @@ namespace EasyKeeb_Configurator
 
         void Import()
         {
-            keymapStr.Clear();
-            keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>>(txtImport.Text);
-            BuildKeymapUI(keymapStr);
+            //clear dictionaries
+            foreach (Dictionary<string,string> d in keymapStr) { d.Clear(); }
+            keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(txtImport.Text);
+            BuildKeymapUI(keymapStr[0]);
+            cboKey.Enabled = false;
         }
 
         void ImportFile()
@@ -517,6 +544,56 @@ namespace EasyKeeb_Configurator
         private void btnExportFile_Click(object sender, EventArgs e)
         {
             ExportFile();
+        }
+
+        private void rbL1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbL1.Checked)
+            {
+                GetLayerMap(curLyr);
+                curLyr = 0;
+                BuildKeymapUI(keymapStr[curLyr]);
+            }
+        }
+
+        private void rbL2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbL2.Checked)
+            {
+                GetLayerMap(curLyr);
+                curLyr = 1;
+                BuildKeymapUI(keymapStr[curLyr]);
+            }
+        }
+
+        private void rbL3_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbL3.Checked)
+            {
+                GetLayerMap(curLyr);
+                curLyr = 2;
+                BuildKeymapUI(keymapStr[curLyr]);
+            }
+        }
+
+        private void rbL4_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbL4.Checked)
+            {
+                GetLayerMap(curLyr);
+                curLyr = 3;
+                BuildKeymapUI(keymapStr[curLyr]);
+            }
+        }
+
+        private void rbL5_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbL5.Checked)
+            {
+                GetLayerMap(curLyr);
+                curLyr = 4;
+                BuildKeymapUI(keymapStr[curLyr]);
+            }
         }
     }
 }
