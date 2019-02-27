@@ -8,3 +8,7 @@ C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKe
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.exe
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.pdb
 C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.csprojAssemblyReference.cache
+C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alex\Documents\GitHub\EasyKeeb\Desktop App\EasyKeeb Configurator\EasyKeeb Configurator\obj\Debug\EasyKeeb Configurator.csproj.CopyComplete

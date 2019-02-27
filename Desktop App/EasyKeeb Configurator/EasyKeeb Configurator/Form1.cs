@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EasyKeeb_Configurator
 {
@@ -14,14 +16,38 @@ namespace EasyKeeb_Configurator
     {
         Dictionary<string, int> keycodes = new Dictionary<string, int>();
         Dictionary<string, byte> keys = new Dictionary<string, byte>();
+        Dictionary<string, byte> keyIndex = new Dictionary<string, byte>();
+
+        Dictionary<string,string> keymapStr = new Dictionary<string,string>();
 
         byte[] keymap = new byte[116];
-        string curBtn = "", export = "", import = "";
+        string curBtn = "";
+
+        void BuildKeymapUI(Dictionary<string,string> kmap)
+        {
+            foreach (KeyValuePair<string, string> p in kmap)
+            {
+                foreach (Button b in pnlKeys.Controls)
+                {
+                    if (b.Name == p.Key) b.Text = p.Value;
+                }
+            }
+        }
 
 
         public Form1()
         {
             InitializeComponent();
+
+            //Build initial keymap
+            using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
+            {
+                string s = reader.ReadToEnd();
+
+                keymapStr.Clear();
+                keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>>(s);
+                BuildKeymapUI(keymapStr);
+            }
 
             //fill keycode dictionary - assigns key strings to their keycodes
             keycodes.Add("Left Ctrl", 106);
@@ -151,7 +177,7 @@ namespace EasyKeeb_Configurator
             keycodes.Add("Toggle Layer 8", 218);
             keycodes.Add("Toggle Layer 9", 219);
 
-            //fill keys dictionary - assigns an ID number to button name strings (btn.Name)
+            //fill keys dictionary - assign button names to indices in dropdown
             keys.Add("btnLCtrl",    0);
             keys.Add("btnLSh",      1);
             keys.Add("btnLAlt",     2);
@@ -267,7 +293,123 @@ namespace EasyKeeb_Configurator
             keys.Add("btnEx8",      112);
             keys.Add("btnEx9",      113);
 
-            cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
+            //fill keyIndex dictionary - assign button names with indices of final keymap
+            keyIndex.Add("btnLCtrl",    106);
+            keyIndex.Add("btnLSh",      1);
+            keyIndex.Add("btnLAlt",     2);
+            keyIndex.Add("btnLGUI",     3);
+            keyIndex.Add("btnA",        4);
+            keyIndex.Add("btnB",        5);
+            keyIndex.Add("btnC",        6);
+            keyIndex.Add("btnD",        7);
+            keyIndex.Add("btnE",        8);
+            keyIndex.Add("btnF",        9);
+            keyIndex.Add("btnG",        10);
+            keyIndex.Add("btnH",        11);
+            keyIndex.Add("btnI",        12);
+            keyIndex.Add("btnJ",        13);
+            keyIndex.Add("btnK",        14);
+            keyIndex.Add("btnL",        15);
+            keyIndex.Add("btnM",        16);
+            keyIndex.Add("btnN",        17);
+            keyIndex.Add("btnO",        18);
+            keyIndex.Add("btnP",        19);
+            keyIndex.Add("btnQ",        20);
+            keyIndex.Add("btnR",        21);
+            keyIndex.Add("btnS",        22);
+            keyIndex.Add("btnT",        23);
+            keyIndex.Add("btnU",        24);
+            keyIndex.Add("btnV",        25);
+            keyIndex.Add("btnW",        26);
+            keyIndex.Add("btnX",        27);
+            keyIndex.Add("btnY",        28);
+            keyIndex.Add("btnZ",        29);
+            keyIndex.Add("btn1",        30);
+            keyIndex.Add("btn2",        31);
+            keyIndex.Add("btn3",        32);
+            keyIndex.Add("btn4",        33);
+            keyIndex.Add("btn5",        34);
+            keyIndex.Add("btn6",        35);
+            keyIndex.Add("btn7",        36);
+            keyIndex.Add("btn8",        37);
+            keyIndex.Add("btn9",        38);
+            keyIndex.Add("btn0",        39);
+            keyIndex.Add("btnEnt",      40);
+            keyIndex.Add("btnEsc",      41);
+            keyIndex.Add("btnBsp",      42);
+            keyIndex.Add("btnTab",      43);
+            keyIndex.Add("btnSpc",      44);
+            keyIndex.Add("btnMin",      45);
+            keyIndex.Add("btnEql",      46);
+            keyIndex.Add("btnLbr",      47);
+            keyIndex.Add("btnRbr",      48);
+            keyIndex.Add("btnBsl",      49);
+            keyIndex.Add("btnScl",      51);
+            keyIndex.Add("btnQuot",     52);
+            keyIndex.Add("btnGrv",      53);
+            keyIndex.Add("btnCom",      54);
+            keyIndex.Add("btnPer",      55);
+            keyIndex.Add("btnSlsh",     56);
+            keyIndex.Add("btnCap",      57);
+            keyIndex.Add("btnF1",       58);
+            keyIndex.Add("btnF2",       59);
+            keyIndex.Add("btnF3",       60);
+            keyIndex.Add("btnF4",       61);
+            keyIndex.Add("btnF5",       62);
+            keyIndex.Add("btnF6",       63);
+            keyIndex.Add("btnF7",       64);
+            keyIndex.Add("btnF8",       65);
+            keyIndex.Add("btnF9",       66);
+            keyIndex.Add("btnF10",      67);
+            keyIndex.Add("btnF11",      68);
+            keyIndex.Add("btnF12",      69);
+            keyIndex.Add("btnPrnt",     70);
+            keyIndex.Add("btnScrLk",    71);
+            keyIndex.Add("btnPause",    72);
+            keyIndex.Add("btnIns",      73);
+            keyIndex.Add("btnHm",       74);
+            keyIndex.Add("btnPgUp",     75);
+            keyIndex.Add("btnDel",      76);
+            keyIndex.Add("btnEnd",      77);
+            keyIndex.Add("btnPgDn",     78);
+            keyIndex.Add("btnRight",    79);
+            keyIndex.Add("btnLeft",     80);
+            keyIndex.Add("btnDn",       81);
+            keyIndex.Add("btnUp",       82);
+            keyIndex.Add("btnNumLk",    83);
+            keyIndex.Add("btnNumSlsh",  84);
+            keyIndex.Add("btnNumStr",   85);
+            keyIndex.Add("btnNumMin",   86);
+            keyIndex.Add("btnNumPlus",  87);
+            keyIndex.Add("btnNumEnt",   88);
+            keyIndex.Add("btnNum1",     89);
+            keyIndex.Add("btnNum2",     90);
+            keyIndex.Add("btnNum3",     91);
+            keyIndex.Add("btnNum4",     92);
+            keyIndex.Add("btnNum5",     93);
+            keyIndex.Add("btnNum6",     94);
+            keyIndex.Add("btnNum7",     95);
+            keyIndex.Add("btnNum8",     96);
+            keyIndex.Add("btnNum9",     97);
+            keyIndex.Add("btnNum0",     98);
+            keyIndex.Add("btnNumPer",   99);
+            keyIndex.Add("btnMenu",     101);
+            keyIndex.Add("btnRCtrl",    102);
+            keyIndex.Add("btnRSh",      103);
+            keyIndex.Add("btnRAlt",     104);
+            keyIndex.Add("btnRGUI",     105);
+            keyIndex.Add("btnEx0",      107);
+            keyIndex.Add("btnEx1",      108);
+            keyIndex.Add("btnEx2",      109);
+            keyIndex.Add("btnEx3",      110);
+            keyIndex.Add("btnEx4",      111);
+            keyIndex.Add("btnEx5",      112);
+            keyIndex.Add("btnEx6",      113);
+            keyIndex.Add("btnEx7",      114);
+            keyIndex.Add("btnEx8",      115);
+            keyIndex.Add("btnEx9",      116);
+
+                cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
             foreach(KeyValuePair<string,int> p in keycodes)
             {
                 cboKey.Items.Add(p.Key);
@@ -286,12 +428,95 @@ namespace EasyKeeb_Configurator
             }
         }
 
+        void Export()
+        {
+            keymapStr.Clear();
+            foreach (Button b in pnlKeys.Controls)
+            {
+                keymapStr.Add(b.Name, b.Text);
+            }
+            txtExport.Text = JsonConvert.SerializeObject(keymapStr);
+        }
+
+        void ExportFile()
+        {
+            Export();
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt|JSON files (*.json)|*.json|All files (*.*)|*.*";
+                saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (System.IO.StreamWriter writer = new System.IO.StreamWriter(System.IO.File.Create(saveFileDialog.FileName)))
+                    {
+                        writer.Write(txtExport.Text);
+                    }
+                }
+            }
+        }
+
+        void Import()
+        {
+            keymapStr.Clear();
+            keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>>(txtImport.Text);
+            BuildKeymapUI(keymapStr);
+        }
+
+        void ImportFile()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|JSON files (*.json)|*.json|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (System.IO.StreamReader reader = new System.IO.StreamReader(fileStream))
+                    {
+                        txtImport.Text = reader.ReadToEnd();
+                    }
+                }
+            }
+        }
+
         private void cboKey_SelectionChangeCommitted(object sender, EventArgs e)
         {
             foreach (Control c in pnlKeys.Controls)
             {
                 if (c.Name == curBtn) c.Text = cboKey.Text;
             }
+        }
+
+        private void txtImport_TextChanged(object sender, EventArgs e)
+        {
+            btnImport.Enabled = (txtImport.Text.Length > 0);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            Import();
+        }
+
+        private void btnImportFile_Click(object sender, EventArgs e)
+        {
+            ImportFile();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            Export();
+            txtExport.SelectAll();
+            txtExport.Focus();
+        }
+
+        private void btnExportFile_Click(object sender, EventArgs e)
+        {
+            ExportFile();
         }
     }
 }
