@@ -16,7 +16,6 @@ namespace EasyKeeb_Configurator
     {
         Dictionary<string, int> keycodes = new Dictionary<string, int>();
         Dictionary<string, byte> keys = new Dictionary<string, byte>();
-        Dictionary<string, byte> keyIndex = new Dictionary<string, byte>();
 
         Dictionary<string,string>[] keymapStr = new Dictionary<string, string>[]
         {
@@ -42,32 +41,39 @@ namespace EasyKeeb_Configurator
             }
         }
 
-
-        public Form1()
+        void Reset()
         {
-            InitializeComponent();
+
 
             //Build initial keymap
             using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
             {
                 string s = reader.ReadToEnd();
                 //clear dictionaries
-                foreach (Dictionary<string,string> d in keymapStr) { d.Clear(); }
+                foreach (Dictionary<string, string> d in keymapStr) { d.Clear(); }
 
                 keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(s);
                 BuildKeymapUI(keymapStr[0]);
             }
-/*
+
             //fill keymapStr
-            foreach(Button b in pnlKeys.Controls)
+            foreach (Button b in pnlKeys.Controls)
             {
-                foreach(Dictionary<string,string> d in keymapStr)
+                foreach (Dictionary<string, string> d in keymapStr)
                 {
                     d.Clear();
                     d.Add(b.Name, b.Text);
                 }
             }
-*/
+        }
+
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            Reset();
+
             //fill keycode dictionary - assigns key strings to their keycodes
             keycodes.Add("Left Ctrl", 106);
             keycodes.Add("Left Shift", 1);
@@ -196,8 +202,8 @@ namespace EasyKeeb_Configurator
             keycodes.Add("Toggle Layer 8", 218);
             keycodes.Add("Toggle Layer 9", 219);
 
-            //fill keys dictionary - assign button names to indices in dropdown
-            keys.Add("btnLCtrl",    0);
+            //fill keyIndex dictionary - assign button names with indices of final keymap
+            keys.Add("btnLCtrl",    106);
             keys.Add("btnLSh",      1);
             keys.Add("btnLAlt",     2);
             keys.Add("btnLGUI",     3);
@@ -247,186 +253,70 @@ namespace EasyKeeb_Configurator
             keys.Add("btnLbr",      47);
             keys.Add("btnRbr",      48);
             keys.Add("btnBsl",      49);
-            keys.Add("btnScl",      50);
-            keys.Add("btnQuot",     51);
-            keys.Add("btnGrv",      52);
-            keys.Add("btnCom",      53);
-            keys.Add("btnPer",      54);
-            keys.Add("btnSlsh",     55);
-            keys.Add("btnCap",      56);
-            keys.Add("btnF1",       57);
-            keys.Add("btnF2",       58);
-            keys.Add("btnF3",       59);
-            keys.Add("btnF4",       60);
-            keys.Add("btnF5",       61);
-            keys.Add("btnF6",       62);
-            keys.Add("btnF7",       63);
-            keys.Add("btnF8",       64);
-            keys.Add("btnF9",       65);
-            keys.Add("btnF10",      66);
-            keys.Add("btnF11",      67);
-            keys.Add("btnF12",      68);
-            keys.Add("btnPrnt",     69);
-            keys.Add("btnScrLk",    70);
-            keys.Add("btnPause",    71);
-            keys.Add("btnIns",      72);
-            keys.Add("btnHm",       73);
-            keys.Add("btnPgUp",     74);
-            keys.Add("btnDel",      75);
-            keys.Add("btnEnd",      76);
-            keys.Add("btnPgDn",     77);
-            keys.Add("btnRight",    78);
-            keys.Add("btnLeft",     79);
-            keys.Add("btnDn",       80);
-            keys.Add("btnUp",       81);
-            keys.Add("btnNumLk",    82);
-            keys.Add("btnNumSlsh",  83);
-            keys.Add("btnNumStr",   84);
-            keys.Add("btnNumMin",   85);
-            keys.Add("btnNumPlus",  86);
-            keys.Add("btnNumEnt",   87);
-            keys.Add("btnNum1",     88);
-            keys.Add("btnNum2",     89);
-            keys.Add("btnNum3",     90);
-            keys.Add("btnNum4",     91);
-            keys.Add("btnNum5",     92);
-            keys.Add("btnNum6",     93);
-            keys.Add("btnNum7",     94);
-            keys.Add("btnNum8",     95);
-            keys.Add("btnNum9",     96);
-            keys.Add("btnNum0",     97);
-            keys.Add("btnNumPer",   98);
-            keys.Add("btnMenu",     99);
-            keys.Add("btnRCtrl",    100);
-            keys.Add("btnRSh",      101);
-            keys.Add("btnRAlt",     102);
-            keys.Add("btnRGUI",     103);
-            keys.Add("btnEx0",      104);
-            keys.Add("btnEx1",      105);
-            keys.Add("btnEx2",      106);
-            keys.Add("btnEx3",      107);
-            keys.Add("btnEx4",      108);
-            keys.Add("btnEx5",      109);
-            keys.Add("btnEx6",      110);
-            keys.Add("btnEx7",      111);
-            keys.Add("btnEx8",      112);
-            keys.Add("btnEx9",      113);
-
-            //fill keyIndex dictionary - assign button names with indices of final keymap
-            keyIndex.Add("btnLCtrl",    106);
-            keyIndex.Add("btnLSh",      1);
-            keyIndex.Add("btnLAlt",     2);
-            keyIndex.Add("btnLGUI",     3);
-            keyIndex.Add("btnA",        4);
-            keyIndex.Add("btnB",        5);
-            keyIndex.Add("btnC",        6);
-            keyIndex.Add("btnD",        7);
-            keyIndex.Add("btnE",        8);
-            keyIndex.Add("btnF",        9);
-            keyIndex.Add("btnG",        10);
-            keyIndex.Add("btnH",        11);
-            keyIndex.Add("btnI",        12);
-            keyIndex.Add("btnJ",        13);
-            keyIndex.Add("btnK",        14);
-            keyIndex.Add("btnL",        15);
-            keyIndex.Add("btnM",        16);
-            keyIndex.Add("btnN",        17);
-            keyIndex.Add("btnO",        18);
-            keyIndex.Add("btnP",        19);
-            keyIndex.Add("btnQ",        20);
-            keyIndex.Add("btnR",        21);
-            keyIndex.Add("btnS",        22);
-            keyIndex.Add("btnT",        23);
-            keyIndex.Add("btnU",        24);
-            keyIndex.Add("btnV",        25);
-            keyIndex.Add("btnW",        26);
-            keyIndex.Add("btnX",        27);
-            keyIndex.Add("btnY",        28);
-            keyIndex.Add("btnZ",        29);
-            keyIndex.Add("btn1",        30);
-            keyIndex.Add("btn2",        31);
-            keyIndex.Add("btn3",        32);
-            keyIndex.Add("btn4",        33);
-            keyIndex.Add("btn5",        34);
-            keyIndex.Add("btn6",        35);
-            keyIndex.Add("btn7",        36);
-            keyIndex.Add("btn8",        37);
-            keyIndex.Add("btn9",        38);
-            keyIndex.Add("btn0",        39);
-            keyIndex.Add("btnEnt",      40);
-            keyIndex.Add("btnEsc",      41);
-            keyIndex.Add("btnBsp",      42);
-            keyIndex.Add("btnTab",      43);
-            keyIndex.Add("btnSpc",      44);
-            keyIndex.Add("btnMin",      45);
-            keyIndex.Add("btnEql",      46);
-            keyIndex.Add("btnLbr",      47);
-            keyIndex.Add("btnRbr",      48);
-            keyIndex.Add("btnBsl",      49);
-            keyIndex.Add("btnScl",      51);
-            keyIndex.Add("btnQuot",     52);
-            keyIndex.Add("btnGrv",      53);
-            keyIndex.Add("btnCom",      54);
-            keyIndex.Add("btnPer",      55);
-            keyIndex.Add("btnSlsh",     56);
-            keyIndex.Add("btnCap",      57);
-            keyIndex.Add("btnF1",       58);
-            keyIndex.Add("btnF2",       59);
-            keyIndex.Add("btnF3",       60);
-            keyIndex.Add("btnF4",       61);
-            keyIndex.Add("btnF5",       62);
-            keyIndex.Add("btnF6",       63);
-            keyIndex.Add("btnF7",       64);
-            keyIndex.Add("btnF8",       65);
-            keyIndex.Add("btnF9",       66);
-            keyIndex.Add("btnF10",      67);
-            keyIndex.Add("btnF11",      68);
-            keyIndex.Add("btnF12",      69);
-            keyIndex.Add("btnPrnt",     70);
-            keyIndex.Add("btnScrLk",    71);
-            keyIndex.Add("btnPause",    72);
-            keyIndex.Add("btnIns",      73);
-            keyIndex.Add("btnHm",       74);
-            keyIndex.Add("btnPgUp",     75);
-            keyIndex.Add("btnDel",      76);
-            keyIndex.Add("btnEnd",      77);
-            keyIndex.Add("btnPgDn",     78);
-            keyIndex.Add("btnRight",    79);
-            keyIndex.Add("btnLeft",     80);
-            keyIndex.Add("btnDn",       81);
-            keyIndex.Add("btnUp",       82);
-            keyIndex.Add("btnNumLk",    83);
-            keyIndex.Add("btnNumSlsh",  84);
-            keyIndex.Add("btnNumStr",   85);
-            keyIndex.Add("btnNumMin",   86);
-            keyIndex.Add("btnNumPlus",  87);
-            keyIndex.Add("btnNumEnt",   88);
-            keyIndex.Add("btnNum1",     89);
-            keyIndex.Add("btnNum2",     90);
-            keyIndex.Add("btnNum3",     91);
-            keyIndex.Add("btnNum4",     92);
-            keyIndex.Add("btnNum5",     93);
-            keyIndex.Add("btnNum6",     94);
-            keyIndex.Add("btnNum7",     95);
-            keyIndex.Add("btnNum8",     96);
-            keyIndex.Add("btnNum9",     97);
-            keyIndex.Add("btnNum0",     98);
-            keyIndex.Add("btnNumPer",   99);
-            keyIndex.Add("btnMenu",     101);
-            keyIndex.Add("btnRCtrl",    102);
-            keyIndex.Add("btnRSh",      103);
-            keyIndex.Add("btnRAlt",     104);
-            keyIndex.Add("btnRGUI",     105);
-            keyIndex.Add("btnEx0",      107);
-            keyIndex.Add("btnEx1",      108);
-            keyIndex.Add("btnEx2",      109);
-            keyIndex.Add("btnEx3",      110);
-            keyIndex.Add("btnEx4",      111);
-            keyIndex.Add("btnEx5",      112);
-            keyIndex.Add("btnEx6",      113);
-            keyIndex.Add("btnEx7",      114);
-            keyIndex.Add("btnEx8",      115);
-            keyIndex.Add("btnEx9",      116);
+            keys.Add("btnScl",      51);
+            keys.Add("btnQuot",     52);
+            keys.Add("btnGrv",      53);
+            keys.Add("btnCom",      54);
+            keys.Add("btnPer",      55);
+            keys.Add("btnSlsh",     56);
+            keys.Add("btnCap",      57);
+            keys.Add("btnF1",       58);
+            keys.Add("btnF2",       59);
+            keys.Add("btnF3",       60);
+            keys.Add("btnF4",       61);
+            keys.Add("btnF5",       62);
+            keys.Add("btnF6",       63);
+            keys.Add("btnF7",       64);
+            keys.Add("btnF8",       65);
+            keys.Add("btnF9",       66);
+            keys.Add("btnF10",      67);
+            keys.Add("btnF11",      68);
+            keys.Add("btnF12",      69);
+            keys.Add("btnPrnt",     70);
+            keys.Add("btnScrLk",    71);
+            keys.Add("btnPause",    72);
+            keys.Add("btnIns",      73);
+            keys.Add("btnHm",       74);
+            keys.Add("btnPgUp",     75);
+            keys.Add("btnDel",      76);
+            keys.Add("btnEnd",      77);
+            keys.Add("btnPgDn",     78);
+            keys.Add("btnRight",    79);
+            keys.Add("btnLeft",     80);
+            keys.Add("btnDn",       81);
+            keys.Add("btnUp",       82);
+            keys.Add("btnNumLk",    83);
+            keys.Add("btnNumSlsh",  84);
+            keys.Add("btnNumStr",   85);
+            keys.Add("btnNumMin",   86);
+            keys.Add("btnNumPlus",  87);
+            keys.Add("btnNumEnt",   88);
+            keys.Add("btnNum1",     89);
+            keys.Add("btnNum2",     90);
+            keys.Add("btnNum3",     91);
+            keys.Add("btnNum4",     92);
+            keys.Add("btnNum5",     93);
+            keys.Add("btnNum6",     94);
+            keys.Add("btnNum7",     95);
+            keys.Add("btnNum8",     96);
+            keys.Add("btnNum9",     97);
+            keys.Add("btnNum0",     98);
+            keys.Add("btnNumPer",   99);
+            keys.Add("btnMenu",     101);
+            keys.Add("btnRCtrl",    102);
+            keys.Add("btnRSh",      103);
+            keys.Add("btnRAlt",     104);
+            keys.Add("btnRGUI",     105);
+            keys.Add("btnEx0",      107);
+            keys.Add("btnEx1",      108);
+            keys.Add("btnEx2",      109);
+            keys.Add("btnEx3",      110);
+            keys.Add("btnEx4",      111);
+            keys.Add("btnEx5",      112);
+            keys.Add("btnEx6",      113);
+            keys.Add("btnEx7",      114);
+            keys.Add("btnEx8",      115);
+            keys.Add("btnEx9",      116);
 
                 cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
             foreach(KeyValuePair<string,int> p in keycodes)
@@ -442,7 +332,7 @@ namespace EasyKeeb_Configurator
                         Button btn = (Button)sender;
                         curBtn = btn.Name;
                         if (!cboKey.Enabled) cboKey.Enabled = true;
-                        cboKey.SelectedIndex = keys[curBtn];
+                        cboKey.SelectedIndex = cboKey.FindStringExact(btn.Text);
                     });
             }
         }
@@ -593,6 +483,25 @@ namespace EasyKeeb_Configurator
                 GetLayerMap(curLyr);
                 curLyr = 4;
                 BuildKeymapUI(keymapStr[curLyr]);
+            }
+        }
+
+        private void btnRst_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void btnClr_Click(object sender, EventArgs e)
+        {
+            foreach(Dictionary<string,string> d in keymapStr)
+            {
+                d.Clear();
+
+                foreach (Button b in pnlKeys.Controls)
+                {
+                    b.Text = "";
+                    d.Add(b.Name, b.Text);
+                }
             }
         }
     }
