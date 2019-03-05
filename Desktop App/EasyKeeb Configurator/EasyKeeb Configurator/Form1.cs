@@ -32,6 +32,7 @@ namespace EasyKeeb_Configurator
 
         void BuildKeymapUI(Dictionary<string,string> kmap)
         {
+            foreach (Button b in pnlKeys.Controls) b.Text = "";
             foreach (KeyValuePair<string, string> p in kmap)
             {
                 foreach (Button b in pnlKeys.Controls)
@@ -43,8 +44,6 @@ namespace EasyKeeb_Configurator
 
         void Reset()
         {
-
-
             //Build initial keymap
             using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
             {
@@ -55,24 +54,12 @@ namespace EasyKeeb_Configurator
                 keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(s);
                 BuildKeymapUI(keymapStr[0]);
             }
-
-            //fill keymapStr
-            foreach (Button b in pnlKeys.Controls)
-            {
-                foreach (Dictionary<string, string> d in keymapStr)
-                {
-                    d.Clear();
-                    d.Add(b.Name, b.Text);
-                }
-            }
         }
 
 
         public Form1()
         {
             InitializeComponent();
-
-            Reset();
 
             //fill keycode dictionary - assigns key strings to their keycodes
             keycodes.Add("Left Ctrl", 106);
@@ -318,11 +305,14 @@ namespace EasyKeeb_Configurator
             keys.Add("btnEx8",      115);
             keys.Add("btnEx9",      116);
 
-                cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach(KeyValuePair<string,int> p in keycodes)
-            {
-                cboKey.Items.Add(p.Key);
-            }
+            //fill keys dropdown
+            cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
+            foreach(KeyValuePair<string,int> p in keycodes) cboKey.Items.Add(p.Key);
+
+            //fill layers dropdown
+            cboLayer.DropDownStyle = ComboBoxStyle.DropDownList;
+            for (int i = 0; i < 5; ++i) cboLayer.Items.Add((i+1).ToString());
+            cboLayer.SelectedIndex = 0;
 
             foreach (Control c in pnlKeys.Controls)
             {
@@ -333,8 +323,11 @@ namespace EasyKeeb_Configurator
                         curBtn = btn.Name;
                         if (!cboKey.Enabled) cboKey.Enabled = true;
                         cboKey.SelectedIndex = cboKey.FindStringExact(btn.Text);
+                        cboKey.Focus();
                     });
             }
+
+            Reset();
         }
 
         //fill dictionary for current layer
@@ -436,56 +429,6 @@ namespace EasyKeeb_Configurator
             ExportFile();
         }
 
-        private void rbL1_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbL1.Checked)
-            {
-                GetLayerMap(curLyr);
-                curLyr = 0;
-                BuildKeymapUI(keymapStr[curLyr]);
-            }
-        }
-
-        private void rbL2_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbL2.Checked)
-            {
-                GetLayerMap(curLyr);
-                curLyr = 1;
-                BuildKeymapUI(keymapStr[curLyr]);
-            }
-        }
-
-        private void rbL3_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbL3.Checked)
-            {
-                GetLayerMap(curLyr);
-                curLyr = 2;
-                BuildKeymapUI(keymapStr[curLyr]);
-            }
-        }
-
-        private void rbL4_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbL4.Checked)
-            {
-                GetLayerMap(curLyr);
-                curLyr = 3;
-                BuildKeymapUI(keymapStr[curLyr]);
-            }
-        }
-
-        private void rbL5_CheckedChanged(object sender, EventArgs e)
-        {
-            if(rbL5.Checked)
-            {
-                GetLayerMap(curLyr);
-                curLyr = 4;
-                BuildKeymapUI(keymapStr[curLyr]);
-            }
-        }
-
         private void btnRst_Click(object sender, EventArgs e)
         {
             Reset();
@@ -503,6 +446,15 @@ namespace EasyKeeb_Configurator
                     d.Add(b.Name, b.Text);
                 }
             }
+        }
+
+        private void cboLayer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboKey.Enabled = false;
+            cboKey.SelectedIndex = -1;
+            GetLayerMap(curLyr);
+            curLyr = cboLayer.SelectedIndex;
+            BuildKeymapUI(keymapStr[curLyr]);
         }
     }
 }
