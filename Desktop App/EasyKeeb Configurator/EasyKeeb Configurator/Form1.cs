@@ -314,9 +314,9 @@ namespace EasyKeeb_Configurator
             for (int i = 0; i < 5; ++i) cboLayer.Items.Add((i+1).ToString());
             cboLayer.SelectedIndex = 0;
 
-            foreach (Control c in pnlKeys.Controls)
+            foreach (Button b in pnlKeys.Controls)
             {
-                c.MouseClick += new MouseEventHandler(
+                b.MouseClick += new MouseEventHandler(
                     delegate (object sender, MouseEventArgs e)
                     {
                         Button btn = (Button)sender;
@@ -396,9 +396,9 @@ namespace EasyKeeb_Configurator
 
         private void cboKey_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            foreach (Control c in pnlKeys.Controls)
+            foreach (Button b in pnlKeys.Controls)
             {
-                if (c.Name == curBtn) c.Text = cboKey.Text;
+                if (b.Name == curBtn) b.Text = cboKey.Text;
             }
         }
 
