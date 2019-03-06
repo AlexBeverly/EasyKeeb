@@ -14,8 +14,8 @@ namespace EasyKeeb_Configurator
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, int> keycodes = new Dictionary<string, int>();
-        Dictionary<string, byte> keys = new Dictionary<string, byte>();
+        Dictionary<string, byte> keycodes = new Dictionary<string, byte>();
+        Dictionary<string, int> keys = new Dictionary<string, int>();
 
         Dictionary<string,string>[] keymapStr = new Dictionary<string, string>[]
         {
@@ -42,14 +42,30 @@ namespace EasyKeeb_Configurator
             }
         }
 
-        void Reset()
+        void ResetLyr(int layer)
+        {
+            //Build initial keymap
+            using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
+            {
+                string s = reader.ReadToEnd();
+                //clear dictionary
+                keymapStr[layer].Clear();
+
+                Dictionary<string, string>[] d = new Dictionary<string, string>[5];
+                d = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(s);
+                foreach (KeyValuePair<string, string> p in d[layer]) keymapStr[layer][p.Key] = p.Value;
+                BuildKeymapUI(keymapStr[layer]);
+            }
+        }
+
+        void ResetAll()
         {
             //Build initial keymap
             using (System.IO.StreamReader reader = new System.IO.StreamReader("DefaultLayout.json"))
             {
                 string s = reader.ReadToEnd();
                 //clear dictionaries
-                foreach (Dictionary<string, string> d in keymapStr) { d.Clear(); }
+                foreach (Dictionary<string, string> d in keymapStr) d.Clear();
 
                 keymapStr = JsonConvert.DeserializeObject<Dictionary<string, string>[]>(s);
                 BuildKeymapUI(keymapStr[0]);
@@ -307,7 +323,7 @@ namespace EasyKeeb_Configurator
 
             //fill keys dropdown
             cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
-            foreach(KeyValuePair<string,int> p in keycodes) cboKey.Items.Add(p.Key);
+            foreach(KeyValuePair<string,byte> p in keycodes) cboKey.Items.Add(p.Key);
 
             //fill layers dropdown
             cboLayer.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -327,7 +343,32 @@ namespace EasyKeeb_Configurator
                     });
             }
 
-            Reset();
+            ResetAll();
+            btnEsc.Select();
+        }
+
+        void ClearLayer(int layer)
+        {
+            keymapStr[layer].Clear();
+            foreach(Button b in pnlKeys.Controls)
+            {
+                b.Text = "";
+                keymapStr[layer].Add(b.Name, b.Text);
+            }
+        }
+
+        void ClearAll()
+        {
+            foreach (Dictionary<string, string> d in keymapStr)
+            {
+                d.Clear();
+
+                foreach (Button b in pnlKeys.Controls)
+                {
+                    b.Text = "";
+                    d.Add(b.Name, b.Text);
+                }
+            }
         }
 
         //fill dictionary for current layer
@@ -415,6 +456,7 @@ namespace EasyKeeb_Configurator
         private void btnImportFile_Click(object sender, EventArgs e)
         {
             ImportFile();
+            lblImportInstructions.Visible = (txtImport.Text.Length > 0);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -429,25 +471,6 @@ namespace EasyKeeb_Configurator
             ExportFile();
         }
 
-        private void btnRst_Click(object sender, EventArgs e)
-        {
-            Reset();
-        }
-
-        private void btnClr_Click(object sender, EventArgs e)
-        {
-            foreach(Dictionary<string,string> d in keymapStr)
-            {
-                d.Clear();
-
-                foreach (Button b in pnlKeys.Controls)
-                {
-                    b.Text = "";
-                    d.Add(b.Name, b.Text);
-                }
-            }
-        }
-
         private void cboLayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboKey.Enabled = false;
@@ -455,6 +478,42 @@ namespace EasyKeeb_Configurator
             GetLayerMap(curLyr);
             curLyr = cboLayer.SelectedIndex;
             BuildKeymapUI(keymapStr[curLyr]);
+        }
+
+        private void btnRst_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+        }
+
+        private void btnClr_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
+        private void btnRstLyr_Click(object sender, EventArgs e)
+        {
+            ResetLyr(curLyr);
+        }
+
+        private void btnClrLyr_Click(object sender, EventArgs e)
+        {
+            ClearLayer(curLyr);
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            //set every value in keymap[,] to 0
+            for (int i = 0; i < (5 * 116); i++) keymap[i % 5, i / 5] = 0;
+            //assign values to keymap array
+            for (int i = 0; i < 5; i++)
+            { 
+                foreach(KeyValuePair<string,string> p in keymapStr[i])
+                {
+                    keymap[i, keys[p.Key]] = keycodes[p.Value];
+                }
+            }
+
+            //TODO: serial communication with Leonardo with keymap.
         }
     }
 }

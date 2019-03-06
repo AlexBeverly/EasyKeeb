@@ -155,6 +155,10 @@
             this.btnClr = new System.Windows.Forms.Button();
             this.cboLayer = new System.Windows.Forms.ComboBox();
             this.lblLayer = new System.Windows.Forms.Label();
+            this.btnClrLyr = new System.Windows.Forms.Button();
+            this.btnRstLyr = new System.Windows.Forms.Button();
+            this.lblImportInstructions = new System.Windows.Forms.Label();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.pnlKeys.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1323,7 +1327,7 @@
             this.pnlKeys.Controls.Add(this.btnGrv);
             this.pnlKeys.Controls.Add(this.btnF12);
             this.pnlKeys.Location = new System.Drawing.Point(15, 20);
-            this.pnlKeys.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlKeys.Margin = new System.Windows.Forms.Padding(2);
             this.pnlKeys.Name = "pnlKeys";
             this.pnlKeys.Size = new System.Drawing.Size(1351, 447);
             this.pnlKeys.TabIndex = 191;
@@ -1339,7 +1343,7 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(789, 583);
+            this.btnExport.Location = new System.Drawing.Point(584, 583);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(141, 23);
             this.btnExport.TabIndex = 193;
@@ -1349,7 +1353,7 @@
             // 
             // btnExportFile
             // 
-            this.btnExportFile.Location = new System.Drawing.Point(789, 612);
+            this.btnExportFile.Location = new System.Drawing.Point(731, 583);
             this.btnExportFile.Name = "btnExportFile";
             this.btnExportFile.Size = new System.Drawing.Size(141, 23);
             this.btnExportFile.TabIndex = 195;
@@ -1359,7 +1363,7 @@
             // 
             // btnImportFile
             // 
-            this.btnImportFile.Location = new System.Drawing.Point(1159, 612);
+            this.btnImportFile.Location = new System.Drawing.Point(1101, 583);
             this.btnImportFile.Name = "btnImportFile";
             this.btnImportFile.Size = new System.Drawing.Size(141, 23);
             this.btnImportFile.TabIndex = 198;
@@ -1370,7 +1374,7 @@
             // btnImport
             // 
             this.btnImport.Enabled = false;
-            this.btnImport.Location = new System.Drawing.Point(1159, 583);
+            this.btnImport.Location = new System.Drawing.Point(954, 583);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(141, 23);
             this.btnImport.TabIndex = 197;
@@ -1383,7 +1387,6 @@
             this.txtImport.Location = new System.Drawing.Point(954, 404);
             this.txtImport.Multiline = true;
             this.txtImport.Name = "txtImport";
-            this.txtImport.ReadOnly = true;
             this.txtImport.Size = new System.Drawing.Size(346, 173);
             this.txtImport.TabIndex = 196;
             this.txtImport.TextChanged += new System.EventHandler(this.txtImport_TextChanged);
@@ -1391,9 +1394,9 @@
             // btnRst
             // 
             this.btnRst.Location = new System.Drawing.Point(428, 500);
-            this.btnRst.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRst.Margin = new System.Windows.Forms.Padding(2);
             this.btnRst.Name = "btnRst";
-            this.btnRst.Size = new System.Drawing.Size(63, 19);
+            this.btnRst.Size = new System.Drawing.Size(63, 37);
             this.btnRst.TabIndex = 199;
             this.btnRst.Text = "Reset All";
             this.btnRst.UseVisualStyleBackColor = true;
@@ -1402,9 +1405,9 @@
             // btnClr
             // 
             this.btnClr.Location = new System.Drawing.Point(492, 500);
-            this.btnClr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClr.Margin = new System.Windows.Forms.Padding(2);
             this.btnClr.Name = "btnClr";
-            this.btnClr.Size = new System.Drawing.Size(56, 19);
+            this.btnClr.Size = new System.Drawing.Size(56, 37);
             this.btnClr.TabIndex = 200;
             this.btnClr.Text = "Clear All";
             this.btnClr.UseVisualStyleBackColor = true;
@@ -1431,11 +1434,59 @@
             this.lblLayer.TabIndex = 202;
             this.lblLayer.Text = "Layer:";
             // 
+            // btnClrLyr
+            // 
+            this.btnClrLyr.Location = new System.Drawing.Point(492, 541);
+            this.btnClrLyr.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClrLyr.Name = "btnClrLyr";
+            this.btnClrLyr.Size = new System.Drawing.Size(56, 36);
+            this.btnClrLyr.TabIndex = 204;
+            this.btnClrLyr.Text = "Clear Layer";
+            this.btnClrLyr.UseVisualStyleBackColor = true;
+            this.btnClrLyr.Click += new System.EventHandler(this.btnClrLyr_Click);
+            // 
+            // btnRstLyr
+            // 
+            this.btnRstLyr.Location = new System.Drawing.Point(428, 541);
+            this.btnRstLyr.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRstLyr.Name = "btnRstLyr";
+            this.btnRstLyr.Size = new System.Drawing.Size(63, 36);
+            this.btnRstLyr.TabIndex = 203;
+            this.btnRstLyr.Text = "Reset Layer";
+            this.btnRstLyr.UseVisualStyleBackColor = true;
+            this.btnRstLyr.Click += new System.EventHandler(this.btnRstLyr_Click);
+            // 
+            // lblImportInstructions
+            // 
+            this.lblImportInstructions.AllowDrop = true;
+            this.lblImportInstructions.AutoSize = true;
+            this.lblImportInstructions.Location = new System.Drawing.Point(956, 618);
+            this.lblImportInstructions.Name = "lblImportInstructions";
+            this.lblImportInstructions.Size = new System.Drawing.Size(295, 13);
+            this.lblImportInstructions.TabIndex = 205;
+            this.lblImportInstructions.Text = "Make sure to click the \"Import\" button after importing from file";
+            this.lblImportInstructions.Visible = false;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(24, 472);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(214, 105);
+            this.btnLoad.TabIndex = 206;
+            this.btnLoad.Text = "Load to Device";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1388, 709);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.lblImportInstructions);
+            this.Controls.Add(this.btnClrLyr);
+            this.Controls.Add(this.btnRstLyr);
             this.Controls.Add(this.lblLayer);
             this.Controls.Add(this.cboLayer);
             this.Controls.Add(this.btnClr);
@@ -1585,6 +1636,10 @@ private System.Windows.Forms.Label lblKey;
         private System.Windows.Forms.Button btnClr;
         private System.Windows.Forms.ComboBox cboLayer;
         private System.Windows.Forms.Label lblLayer;
+        private System.Windows.Forms.Button btnClrLyr;
+        private System.Windows.Forms.Button btnRstLyr;
+        private System.Windows.Forms.Label lblImportInstructions;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 
