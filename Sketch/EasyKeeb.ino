@@ -166,7 +166,7 @@ HIDBoot<USB_HID_PROTOCOL_KEYBOARD>    HidKeyboard(&Usb);
 KbdRptParser Prs;
 
 void setup() {
-  //Serial.begin( 115200 );
+  Serial.begin( 115200 );
   pinMode(ACTIVEPIN, INPUT_PULLUP);
   for (int i = 0; i < SWITCHPINS; i++)
   {

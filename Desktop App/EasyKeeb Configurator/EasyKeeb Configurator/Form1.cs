@@ -184,26 +184,16 @@ namespace EasyKeeb_Configurator
             keycodes.Add("Right Shift", 103);
             keycodes.Add("Right Alt", 104);
             keycodes.Add("Right Windows Key", 105);
-            keycodes.Add("Layer 0", 200);
-            keycodes.Add("Layer 1", 201);
-            keycodes.Add("Layer 2", 202);
-            keycodes.Add("Layer 3", 203);
-            keycodes.Add("Layer 4", 204);
-            keycodes.Add("Layer 5", 205);
-            keycodes.Add("Layer 6", 206);
-            keycodes.Add("Layer 7", 207);
-            keycodes.Add("Layer 8", 208);
-            keycodes.Add("Layer 9", 209);
-            keycodes.Add("Toggle Layer 0", 210);
-            keycodes.Add("Toggle Layer 1", 211);
-            keycodes.Add("Toggle Layer 2", 212);
-            keycodes.Add("Toggle Layer 3", 213);
-            keycodes.Add("Toggle Layer 4", 214);
-            keycodes.Add("Toggle Layer 5", 215);
-            keycodes.Add("Toggle Layer 6", 216);
-            keycodes.Add("Toggle Layer 7", 217);
-            keycodes.Add("Toggle Layer 8", 218);
-            keycodes.Add("Toggle Layer 9", 219);
+            keycodes.Add("Layer 1", 200);
+            keycodes.Add("Layer 2", 201);
+            keycodes.Add("Layer 3", 202);
+            keycodes.Add("Layer 4", 203);
+            keycodes.Add("Layer 5", 204);
+            keycodes.Add("Toggle Layer 1", 210);
+            keycodes.Add("Toggle Layer 2", 211);
+            keycodes.Add("Toggle Layer 3", 212);
+            keycodes.Add("Toggle Layer 4", 213);
+            keycodes.Add("Toggle Layer 5", 214);
 
             //fill keyIndex dictionary - assign button names with indices of final keymap
             keys.Add("btnLCtrl",    106);
