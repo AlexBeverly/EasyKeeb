@@ -193,7 +193,7 @@
             this.btnF12.Name = "btnF12";
             this.btnF12.Size = new System.Drawing.Size(67, 62);
             this.btnF12.TabIndex = 300;
-            this.btnF12.Text = "F12";
+            //this.btnF12.Text = "F12";
             this.btnF12.UseVisualStyleBackColor = true;
             // 
             // btnGrv
@@ -203,7 +203,7 @@
             this.btnGrv.Name = "btnGrv";
             this.btnGrv.Size = new System.Drawing.Size(67, 62);
             this.btnGrv.TabIndex = 301;
-            this.btnGrv.Text = "`";
+            //this.btnGrv.Text = "`";
             this.btnGrv.UseVisualStyleBackColor = true;
             // 
             // btn1
@@ -213,7 +213,7 @@
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(67, 62);
             this.btn1.TabIndex = 302;
-            this.btn1.Text = "1";
+            //this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
             // 
             // btn2
@@ -223,7 +223,7 @@
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(67, 62);
             this.btn2.TabIndex = 303;
-            this.btn2.Text = "2";
+            //this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
             // 
             // btn4
@@ -233,7 +233,7 @@
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(67, 62);
             this.btn4.TabIndex = 304;
-            this.btn4.Text = "4";
+            //this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
             // 
             // btn5
@@ -243,7 +243,7 @@
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(67, 62);
             this.btn5.TabIndex = 305;
-            this.btn5.Text = "5";
+            //this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
             // 
             // btn6
@@ -253,7 +253,7 @@
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(67, 62);
             this.btn6.TabIndex = 306;
-            this.btn6.Text = "6";
+            //this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
             // 
             // btn7
@@ -263,7 +263,7 @@
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(67, 62);
             this.btn7.TabIndex = 307;
-            this.btn7.Text = "7";
+            //this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
             // 
             // btn8
@@ -273,7 +273,7 @@
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(67, 62);
             this.btn8.TabIndex = 308;
-            this.btn8.Text = "8";
+            //this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
             // 
             // btn9
@@ -283,7 +283,7 @@
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(67, 62);
             this.btn9.TabIndex = 309;
-            this.btn9.Text = "9";
+            //this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
             // 
             // btn0
@@ -293,7 +293,7 @@
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(67, 62);
             this.btn0.TabIndex = 310;
-            this.btn0.Text = "0";
+            //this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
             // 
             // btnMin
@@ -303,7 +303,7 @@
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(67, 62);
             this.btnMin.TabIndex = 311;
-            this.btnMin.Text = "-";
+            //this.btnMin.Text = "-";
             this.btnMin.UseVisualStyleBackColor = true;
             // 
             // btnEql
@@ -313,7 +313,7 @@
             this.btnEql.Name = "btnEql";
             this.btnEql.Size = new System.Drawing.Size(67, 62);
             this.btnEql.TabIndex = 312;
-            this.btnEql.Text = "=";
+            //this.btnEql.Text = "=";
             this.btnEql.UseVisualStyleBackColor = true;
             // 
             // btn3
@@ -323,7 +323,7 @@
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(67, 62);
             this.btn3.TabIndex = 313;
-            this.btn3.Text = "3";
+            //this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
             // 
             // btnBsp
@@ -333,7 +333,7 @@
             this.btnBsp.Name = "btnBsp";
             this.btnBsp.Size = new System.Drawing.Size(133, 62);
             this.btnBsp.TabIndex = 314;
-            this.btnBsp.Text = "Backspace";
+            //this.btnBsp.Text = "Backspace";
             this.btnBsp.UseVisualStyleBackColor = true;
             // 
             // btnTab
@@ -343,7 +343,7 @@
             this.btnTab.Name = "btnTab";
             this.btnTab.Size = new System.Drawing.Size(100, 62);
             this.btnTab.TabIndex = 315;
-            this.btnTab.Text = "Tab";
+            //this.btnTab.Text = "Tab";
             this.btnTab.UseVisualStyleBackColor = true;
             // 
             // btnQ
@@ -353,7 +353,7 @@
             this.btnQ.Name = "btnQ";
             this.btnQ.Size = new System.Drawing.Size(67, 62);
             this.btnQ.TabIndex = 316;
-            this.btnQ.Text = "Q";
+            //this.btnQ.Text = "Q";
             this.btnQ.UseVisualStyleBackColor = true;
             // 
             // btnW
@@ -363,7 +363,7 @@
             this.btnW.Name = "btnW";
             this.btnW.Size = new System.Drawing.Size(67, 62);
             this.btnW.TabIndex = 317;
-            this.btnW.Text = "W";
+            //this.btnW.Text = "W";
             this.btnW.UseVisualStyleBackColor = true;
             // 
             // btnE
@@ -373,7 +373,7 @@
             this.btnE.Name = "btnE";
             this.btnE.Size = new System.Drawing.Size(67, 62);
             this.btnE.TabIndex = 318;
-            this.btnE.Text = "E";
+            //this.btnE.Text = "E";
             this.btnE.UseVisualStyleBackColor = true;
             // 
             // btnR
@@ -383,7 +383,7 @@
             this.btnR.Name = "btnR";
             this.btnR.Size = new System.Drawing.Size(67, 62);
             this.btnR.TabIndex = 319;
-            this.btnR.Text = "R";
+            //this.btnR.Text = "R";
             this.btnR.UseVisualStyleBackColor = true;
             // 
             // btnT
@@ -393,7 +393,7 @@
             this.btnT.Name = "btnT";
             this.btnT.Size = new System.Drawing.Size(67, 62);
             this.btnT.TabIndex = 320;
-            this.btnT.Text = "T";
+            //this.btnT.Text = "T";
             this.btnT.UseVisualStyleBackColor = true;
             // 
             // btnY
@@ -403,7 +403,7 @@
             this.btnY.Name = "btnY";
             this.btnY.Size = new System.Drawing.Size(67, 62);
             this.btnY.TabIndex = 321;
-            this.btnY.Text = "Y";
+            //this.btnY.Text = "Y";
             this.btnY.UseVisualStyleBackColor = true;
             // 
             // btnU
@@ -413,7 +413,7 @@
             this.btnU.Name = "btnU";
             this.btnU.Size = new System.Drawing.Size(67, 62);
             this.btnU.TabIndex = 322;
-            this.btnU.Text = "U";
+            //this.btnU.Text = "U";
             this.btnU.UseVisualStyleBackColor = true;
             // 
             // btnI
@@ -423,7 +423,7 @@
             this.btnI.Name = "btnI";
             this.btnI.Size = new System.Drawing.Size(67, 62);
             this.btnI.TabIndex = 323;
-            this.btnI.Text = "I";
+            //this.btnI.Text = "I";
             this.btnI.UseVisualStyleBackColor = true;
             // 
             // btnO
@@ -433,7 +433,7 @@
             this.btnO.Name = "btnO";
             this.btnO.Size = new System.Drawing.Size(67, 62);
             this.btnO.TabIndex = 324;
-            this.btnO.Text = "O";
+            //this.btnO.Text = "O";
             this.btnO.UseVisualStyleBackColor = true;
             // 
             // btnP
@@ -443,7 +443,7 @@
             this.btnP.Name = "btnP";
             this.btnP.Size = new System.Drawing.Size(67, 62);
             this.btnP.TabIndex = 325;
-            this.btnP.Text = "P";
+            //this.btnP.Text = "P";
             this.btnP.UseVisualStyleBackColor = true;
             // 
             // btnLbr
@@ -453,7 +453,7 @@
             this.btnLbr.Name = "btnLbr";
             this.btnLbr.Size = new System.Drawing.Size(67, 62);
             this.btnLbr.TabIndex = 326;
-            this.btnLbr.Text = "[";
+            //this.btnLbr.Text = "[";
             this.btnLbr.UseVisualStyleBackColor = true;
             // 
             // btnRbr
@@ -463,7 +463,7 @@
             this.btnRbr.Name = "btnRbr";
             this.btnRbr.Size = new System.Drawing.Size(67, 62);
             this.btnRbr.TabIndex = 327;
-            this.btnRbr.Text = "]";
+            //this.btnRbr.Text = "]";
             this.btnRbr.UseVisualStyleBackColor = true;
             // 
             // btnBsl
@@ -473,7 +473,7 @@
             this.btnBsl.Name = "btnBsl";
             this.btnBsl.Size = new System.Drawing.Size(100, 62);
             this.btnBsl.TabIndex = 328;
-            this.btnBsl.Text = "\\";
+            //this.btnBsl.Text = "\\";
             this.btnBsl.UseVisualStyleBackColor = true;
             // 
             // btnCap
@@ -483,7 +483,7 @@
             this.btnCap.Name = "btnCap";
             this.btnCap.Size = new System.Drawing.Size(124, 62);
             this.btnCap.TabIndex = 329;
-            this.btnCap.Text = "Caps Lock";
+            //this.btnCap.Text = "Caps Lock";
             this.btnCap.UseVisualStyleBackColor = true;
             // 
             // btnLSh
@@ -493,7 +493,7 @@
             this.btnLSh.Name = "btnLSh";
             this.btnLSh.Size = new System.Drawing.Size(151, 62);
             this.btnLSh.TabIndex = 330;
-            this.btnLSh.Text = "Left Shift";
+            //this.btnLSh.Text = "Left Shift";
             this.btnLSh.UseVisualStyleBackColor = true;
             // 
             // btnZ
@@ -503,7 +503,7 @@
             this.btnZ.Name = "btnZ";
             this.btnZ.Size = new System.Drawing.Size(67, 62);
             this.btnZ.TabIndex = 331;
-            this.btnZ.Text = "Z";
+            //this.btnZ.Text = "Z";
             this.btnZ.UseVisualStyleBackColor = true;
             // 
             // btnX
@@ -513,7 +513,7 @@
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(67, 62);
             this.btnX.TabIndex = 332;
-            this.btnX.Text = "X";
+            //this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = true;
             // 
             // btnC
@@ -523,7 +523,7 @@
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(67, 62);
             this.btnC.TabIndex = 333;
-            this.btnC.Text = "C";
+            //this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = true;
             // 
             // btnV
@@ -533,7 +533,7 @@
             this.btnV.Name = "btnV";
             this.btnV.Size = new System.Drawing.Size(67, 62);
             this.btnV.TabIndex = 334;
-            this.btnV.Text = "V";
+            //this.btnV.Text = "V";
             this.btnV.UseVisualStyleBackColor = true;
             // 
             // btnB
@@ -543,7 +543,7 @@
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(67, 62);
             this.btnB.TabIndex = 335;
-            this.btnB.Text = "B";
+            //this.btnB.Text = "B";
             this.btnB.UseVisualStyleBackColor = true;
             // 
             // btnN
@@ -553,7 +553,7 @@
             this.btnN.Name = "btnN";
             this.btnN.Size = new System.Drawing.Size(67, 62);
             this.btnN.TabIndex = 336;
-            this.btnN.Text = "N";
+            //this.btnN.Text = "N";
             this.btnN.UseVisualStyleBackColor = true;
             // 
             // btnM
@@ -563,7 +563,7 @@
             this.btnM.Name = "btnM";
             this.btnM.Size = new System.Drawing.Size(67, 62);
             this.btnM.TabIndex = 337;
-            this.btnM.Text = "M";
+            //this.btnM.Text = "M";
             this.btnM.UseVisualStyleBackColor = true;
             // 
             // btnCom
@@ -573,7 +573,7 @@
             this.btnCom.Name = "btnCom";
             this.btnCom.Size = new System.Drawing.Size(67, 62);
             this.btnCom.TabIndex = 338;
-            this.btnCom.Text = ",";
+            //this.btnCom.Text = ",";
             this.btnCom.UseVisualStyleBackColor = true;
             // 
             // btnPer
@@ -583,7 +583,7 @@
             this.btnPer.Name = "btnPer";
             this.btnPer.Size = new System.Drawing.Size(67, 62);
             this.btnPer.TabIndex = 339;
-            this.btnPer.Text = ".";
+            //this.btnPer.Text = ".";
             this.btnPer.UseVisualStyleBackColor = true;
             // 
             // btnSlsh
@@ -593,7 +593,7 @@
             this.btnSlsh.Name = "btnSlsh";
             this.btnSlsh.Size = new System.Drawing.Size(67, 62);
             this.btnSlsh.TabIndex = 340;
-            this.btnSlsh.Text = "/";
+            //this.btnSlsh.Text = "/";
             this.btnSlsh.UseVisualStyleBackColor = true;
             // 
             // btnRSh
@@ -603,7 +603,7 @@
             this.btnRSh.Name = "btnRSh";
             this.btnRSh.Size = new System.Drawing.Size(199, 62);
             this.btnRSh.TabIndex = 341;
-            this.btnRSh.Text = "Right Shift";
+            //this.btnRSh.Text = "Right Shift";
             this.btnRSh.UseVisualStyleBackColor = true;
             // 
             // btnEnt
@@ -613,7 +613,7 @@
             this.btnEnt.Name = "btnEnt";
             this.btnEnt.Size = new System.Drawing.Size(151, 62);
             this.btnEnt.TabIndex = 342;
-            this.btnEnt.Text = "Enter";
+            //this.btnEnt.Text = "Enter";
             this.btnEnt.UseVisualStyleBackColor = true;
             // 
             // btnS
@@ -623,7 +623,7 @@
             this.btnS.Name = "btnS";
             this.btnS.Size = new System.Drawing.Size(67, 62);
             this.btnS.TabIndex = 343;
-            this.btnS.Text = "S";
+            //this.btnS.Text = "S";
             this.btnS.UseVisualStyleBackColor = true;
             // 
             // btnD
@@ -633,7 +633,7 @@
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(67, 62);
             this.btnD.TabIndex = 344;
-            this.btnD.Text = "D";
+            //this.btnD.Text = "D";
             this.btnD.UseVisualStyleBackColor = true;
             // 
             // btnF
@@ -643,7 +643,7 @@
             this.btnF.Name = "btnF";
             this.btnF.Size = new System.Drawing.Size(67, 62);
             this.btnF.TabIndex = 345;
-            this.btnF.Text = "F";
+            //this.btnF.Text = "F";
             this.btnF.UseVisualStyleBackColor = true;
             // 
             // btnG
@@ -653,7 +653,7 @@
             this.btnG.Name = "btnG";
             this.btnG.Size = new System.Drawing.Size(67, 62);
             this.btnG.TabIndex = 346;
-            this.btnG.Text = "G";
+            //this.btnG.Text = "G";
             this.btnG.UseVisualStyleBackColor = true;
             // 
             // btnH
@@ -663,7 +663,7 @@
             this.btnH.Name = "btnH";
             this.btnH.Size = new System.Drawing.Size(67, 62);
             this.btnH.TabIndex = 347;
-            this.btnH.Text = "H";
+            //this.btnH.Text = "H";
             this.btnH.UseVisualStyleBackColor = true;
             // 
             // btnJ
@@ -673,7 +673,7 @@
             this.btnJ.Name = "btnJ";
             this.btnJ.Size = new System.Drawing.Size(67, 62);
             this.btnJ.TabIndex = 348;
-            this.btnJ.Text = "J";
+            //this.btnJ.Text = "J";
             this.btnJ.UseVisualStyleBackColor = true;
             // 
             // btnK
@@ -683,7 +683,7 @@
             this.btnK.Name = "btnK";
             this.btnK.Size = new System.Drawing.Size(67, 62);
             this.btnK.TabIndex = 349;
-            this.btnK.Text = "K";
+            //this.btnK.Text = "K";
             this.btnK.UseVisualStyleBackColor = true;
             // 
             // btnL
@@ -693,7 +693,7 @@
             this.btnL.Name = "btnL";
             this.btnL.Size = new System.Drawing.Size(67, 62);
             this.btnL.TabIndex = 350;
-            this.btnL.Text = "L";
+            //this.btnL.Text = "L";
             this.btnL.UseVisualStyleBackColor = true;
             // 
             // btnScl
@@ -703,7 +703,7 @@
             this.btnScl.Name = "btnScl";
             this.btnScl.Size = new System.Drawing.Size(67, 62);
             this.btnScl.TabIndex = 351;
-            this.btnScl.Text = ";";
+            //this.btnScl.Text = ";";
             this.btnScl.UseVisualStyleBackColor = true;
             // 
             // btnQuot
@@ -713,7 +713,7 @@
             this.btnQuot.Name = "btnQuot";
             this.btnQuot.Size = new System.Drawing.Size(67, 62);
             this.btnQuot.TabIndex = 352;
-            this.btnQuot.Text = "\'";
+            //this.btnQuot.Text = "\'";
             this.btnQuot.UseVisualStyleBackColor = true;
             // 
             // btnA
@@ -723,7 +723,7 @@
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(67, 62);
             this.btnA.TabIndex = 353;
-            this.btnA.Text = "A";
+            //this.btnA.Text = "A";
             this.btnA.UseVisualStyleBackColor = true;
             // 
             // btnLCtrl
@@ -733,7 +733,7 @@
             this.btnLCtrl.Name = "btnLCtrl";
             this.btnLCtrl.Size = new System.Drawing.Size(84, 62);
             this.btnLCtrl.TabIndex = 354;
-            this.btnLCtrl.Text = "Left Ctrl";
+            //this.btnLCtrl.Text = "Left Ctrl";
             this.btnLCtrl.UseVisualStyleBackColor = true;
             // 
             // btnLGUI
@@ -743,7 +743,7 @@
             this.btnLGUI.Name = "btnLGUI";
             this.btnLGUI.Size = new System.Drawing.Size(84, 62);
             this.btnLGUI.TabIndex = 355;
-            this.btnLGUI.Text = "Left Win";
+            //this.btnLGUI.Text = "Left Win";
             this.btnLGUI.UseVisualStyleBackColor = true;
             // 
             // btnLAlt
@@ -753,7 +753,7 @@
             this.btnLAlt.Name = "btnLAlt";
             this.btnLAlt.Size = new System.Drawing.Size(84, 62);
             this.btnLAlt.TabIndex = 356;
-            this.btnLAlt.Text = "Left Alt";
+            //this.btnLAlt.Text = "Left Alt";
             this.btnLAlt.UseVisualStyleBackColor = true;
             // 
             // btnRGUI
@@ -763,7 +763,7 @@
             this.btnRGUI.Name = "btnRGUI";
             this.btnRGUI.Size = new System.Drawing.Size(84, 62);
             this.btnRGUI.TabIndex = 357;
-            this.btnRGUI.Text = "Right Win";
+            //this.btnRGUI.Text = "Right Win";
             this.btnRGUI.UseVisualStyleBackColor = true;
             // 
             // btnMenu
@@ -773,7 +773,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(84, 62);
             this.btnMenu.TabIndex = 358;
-            this.btnMenu.Text = "Menu";
+            //this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // btnRCtrl
@@ -783,7 +783,7 @@
             this.btnRCtrl.Name = "btnRCtrl";
             this.btnRCtrl.Size = new System.Drawing.Size(84, 62);
             this.btnRCtrl.TabIndex = 359;
-            this.btnRCtrl.Text = "Right Ctrl";
+            //this.btnRCtrl.Text = "Right Ctrl";
             this.btnRCtrl.UseVisualStyleBackColor = true;
             // 
             // btnSpc
@@ -793,7 +793,7 @@
             this.btnSpc.Name = "btnSpc";
             this.btnSpc.Size = new System.Drawing.Size(460, 62);
             this.btnSpc.TabIndex = 360;
-            this.btnSpc.Text = "Space";
+            //this.btnSpc.Text = "Space";
             this.btnSpc.UseVisualStyleBackColor = true;
             // 
             // btnRAlt
@@ -803,7 +803,7 @@
             this.btnRAlt.Name = "btnRAlt";
             this.btnRAlt.Size = new System.Drawing.Size(84, 62);
             this.btnRAlt.TabIndex = 361;
-            this.btnRAlt.Text = "Right Alt";
+            //this.btnRAlt.Text = "Right Alt";
             this.btnRAlt.UseVisualStyleBackColor = true;
             // 
             // btnEsc
@@ -813,7 +813,7 @@
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(67, 62);
             this.btnEsc.TabIndex = 362;
-            this.btnEsc.Text = "Esc";
+            //this.btnEsc.Text = "Esc";
             this.btnEsc.UseVisualStyleBackColor = true;
             // 
             // btnF1
@@ -823,7 +823,7 @@
             this.btnF1.Name = "btnF1";
             this.btnF1.Size = new System.Drawing.Size(67, 62);
             this.btnF1.TabIndex = 363;
-            this.btnF1.Text = "F1";
+            //this.btnF1.Text = "F1";
             this.btnF1.UseVisualStyleBackColor = true;
             // 
             // btnF2
@@ -833,7 +833,7 @@
             this.btnF2.Name = "btnF2";
             this.btnF2.Size = new System.Drawing.Size(67, 62);
             this.btnF2.TabIndex = 364;
-            this.btnF2.Text = "F2";
+            //this.btnF2.Text = "F2";
             this.btnF2.UseVisualStyleBackColor = true;
             // 
             // btnF3
@@ -843,7 +843,7 @@
             this.btnF3.Name = "btnF3";
             this.btnF3.Size = new System.Drawing.Size(67, 62);
             this.btnF3.TabIndex = 365;
-            this.btnF3.Text = "F3";
+            //this.btnF3.Text = "F3";
             this.btnF3.UseVisualStyleBackColor = true;
             // 
             // btnF4
@@ -853,7 +853,7 @@
             this.btnF4.Name = "btnF4";
             this.btnF4.Size = new System.Drawing.Size(67, 62);
             this.btnF4.TabIndex = 366;
-            this.btnF4.Text = "F4";
+            //this.btnF4.Text = "F4";
             this.btnF4.UseVisualStyleBackColor = true;
             // 
             // btnF5
@@ -863,7 +863,7 @@
             this.btnF5.Name = "btnF5";
             this.btnF5.Size = new System.Drawing.Size(67, 62);
             this.btnF5.TabIndex = 367;
-            this.btnF5.Text = "F5";
+            //this.btnF5.Text = "F5";
             this.btnF5.UseVisualStyleBackColor = true;
             // 
             // btnF6
@@ -873,7 +873,7 @@
             this.btnF6.Name = "btnF6";
             this.btnF6.Size = new System.Drawing.Size(67, 62);
             this.btnF6.TabIndex = 368;
-            this.btnF6.Text = "F6";
+            //this.btnF6.Text = "F6";
             this.btnF6.UseVisualStyleBackColor = true;
             // 
             // btnF7
@@ -883,7 +883,7 @@
             this.btnF7.Name = "btnF7";
             this.btnF7.Size = new System.Drawing.Size(67, 62);
             this.btnF7.TabIndex = 369;
-            this.btnF7.Text = "F7";
+            //this.btnF7.Text = "F7";
             this.btnF7.UseVisualStyleBackColor = true;
             // 
             // btnF8
@@ -893,7 +893,7 @@
             this.btnF8.Name = "btnF8";
             this.btnF8.Size = new System.Drawing.Size(67, 62);
             this.btnF8.TabIndex = 370;
-            this.btnF8.Text = "F8";
+            //this.btnF8.Text = "F8";
             this.btnF8.UseVisualStyleBackColor = true;
             // 
             // btnF9
@@ -903,7 +903,7 @@
             this.btnF9.Name = "btnF9";
             this.btnF9.Size = new System.Drawing.Size(67, 62);
             this.btnF9.TabIndex = 371;
-            this.btnF9.Text = "F9";
+            //this.btnF9.Text = "F9";
             this.btnF9.UseVisualStyleBackColor = true;
             // 
             // btnF10
@@ -913,7 +913,7 @@
             this.btnF10.Name = "btnF10";
             this.btnF10.Size = new System.Drawing.Size(67, 62);
             this.btnF10.TabIndex = 372;
-            this.btnF10.Text = "F10";
+            //this.btnF10.Text = "F10";
             this.btnF10.UseVisualStyleBackColor = true;
             // 
             // btnF11
@@ -923,7 +923,7 @@
             this.btnF11.Name = "btnF11";
             this.btnF11.Size = new System.Drawing.Size(67, 62);
             this.btnF11.TabIndex = 373;
-            this.btnF11.Text = "F11";
+            //this.btnF11.Text = "F11";
             this.btnF11.UseVisualStyleBackColor = true;
             // 
             // btnPause
@@ -933,7 +933,7 @@
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(67, 62);
             this.btnPause.TabIndex = 374;
-            this.btnPause.Text = "Pause Break";
+            //this.btnPause.Text = "Pause Break";
             this.btnPause.UseVisualStyleBackColor = true;
             // 
             // btnUp
@@ -943,7 +943,7 @@
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(67, 62);
             this.btnUp.TabIndex = 375;
-            this.btnUp.Text = "↑";
+            //this.btnUp.Text = "↑";
             this.btnUp.UseVisualStyleBackColor = true;
             // 
             // btnPrnt
@@ -953,7 +953,7 @@
             this.btnPrnt.Name = "btnPrnt";
             this.btnPrnt.Size = new System.Drawing.Size(67, 62);
             this.btnPrnt.TabIndex = 376;
-            this.btnPrnt.Text = "PrntSc";
+            //this.btnPrnt.Text = "PrntSc";
             this.btnPrnt.UseVisualStyleBackColor = true;
             // 
             // btnScrLk
@@ -963,7 +963,7 @@
             this.btnScrLk.Name = "btnScrLk";
             this.btnScrLk.Size = new System.Drawing.Size(67, 62);
             this.btnScrLk.TabIndex = 377;
-            this.btnScrLk.Text = "Scroll Lock";
+            //this.btnScrLk.Text = "Scroll Lock";
             this.btnScrLk.UseVisualStyleBackColor = true;
             // 
             // btnRight
@@ -973,7 +973,7 @@
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(67, 62);
             this.btnRight.TabIndex = 378;
-            this.btnRight.Text = "→";
+            //this.btnRight.Text = "→";
             this.btnRight.UseVisualStyleBackColor = true;
             // 
             // btnLeft
@@ -983,7 +983,7 @@
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(67, 62);
             this.btnLeft.TabIndex = 379;
-            this.btnLeft.Text = "←";
+            //this.btnLeft.Text = "←";
             this.btnLeft.UseVisualStyleBackColor = true;
             // 
             // btnDn
@@ -993,7 +993,7 @@
             this.btnDn.Name = "btnDn";
             this.btnDn.Size = new System.Drawing.Size(67, 62);
             this.btnDn.TabIndex = 380;
-            this.btnDn.Text = "↓";
+            //this.btnDn.Text = "↓";
             this.btnDn.UseVisualStyleBackColor = true;
             // 
             // btnPgUp
@@ -1003,7 +1003,7 @@
             this.btnPgUp.Name = "btnPgUp";
             this.btnPgUp.Size = new System.Drawing.Size(67, 62);
             this.btnPgUp.TabIndex = 381;
-            this.btnPgUp.Text = "Page Up";
+            //this.btnPgUp.Text = "Page Up";
             this.btnPgUp.UseVisualStyleBackColor = true;
             // 
             // btnIns
@@ -1013,7 +1013,7 @@
             this.btnIns.Name = "btnIns";
             this.btnIns.Size = new System.Drawing.Size(67, 62);
             this.btnIns.TabIndex = 382;
-            this.btnIns.Text = "Insert";
+            //this.btnIns.Text = "Insert";
             this.btnIns.UseVisualStyleBackColor = true;
             // 
             // btnHm
@@ -1023,7 +1023,7 @@
             this.btnHm.Name = "btnHm";
             this.btnHm.Size = new System.Drawing.Size(67, 62);
             this.btnHm.TabIndex = 383;
-            this.btnHm.Text = "Home";
+            //this.btnHm.Text = "Home";
             this.btnHm.UseVisualStyleBackColor = true;
             // 
             // btnPgDn
@@ -1033,7 +1033,7 @@
             this.btnPgDn.Name = "btnPgDn";
             this.btnPgDn.Size = new System.Drawing.Size(67, 62);
             this.btnPgDn.TabIndex = 384;
-            this.btnPgDn.Text = "Page Down";
+            //this.btnPgDn.Text = "Page Down";
             this.btnPgDn.UseVisualStyleBackColor = true;
             // 
             // btnDel
@@ -1043,7 +1043,7 @@
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(67, 62);
             this.btnDel.TabIndex = 385;
-            this.btnDel.Text = "Delete";
+            //this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
             // btnEnd
@@ -1053,7 +1053,7 @@
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(67, 62);
             this.btnEnd.TabIndex = 386;
-            this.btnEnd.Text = "End";
+            //this.btnEnd.Text = "End";
             this.btnEnd.UseVisualStyleBackColor = true;
             // 
             // btnNumStr
@@ -1063,7 +1063,7 @@
             this.btnNumStr.Name = "btnNumStr";
             this.btnNumStr.Size = new System.Drawing.Size(67, 62);
             this.btnNumStr.TabIndex = 387;
-            this.btnNumStr.Text = "Num *";
+            //this.btnNumStr.Text = "Num *";
             this.btnNumStr.UseVisualStyleBackColor = true;
             // 
             // btnNumLk
@@ -1073,7 +1073,7 @@
             this.btnNumLk.Name = "btnNumLk";
             this.btnNumLk.Size = new System.Drawing.Size(67, 62);
             this.btnNumLk.TabIndex = 388;
-            this.btnNumLk.Text = "Num Lock";
+            //this.btnNumLk.Text = "Num Lock";
             this.btnNumLk.UseVisualStyleBackColor = true;
             // 
             // btnNumSlsh
@@ -1083,7 +1083,7 @@
             this.btnNumSlsh.Name = "btnNumSlsh";
             this.btnNumSlsh.Size = new System.Drawing.Size(67, 62);
             this.btnNumSlsh.TabIndex = 389;
-            this.btnNumSlsh.Text = "Num /";
+            //this.btnNumSlsh.Text = "Num /";
             this.btnNumSlsh.UseVisualStyleBackColor = true;
             // 
             // btnNum9
@@ -1093,7 +1093,7 @@
             this.btnNum9.Name = "btnNum9";
             this.btnNum9.Size = new System.Drawing.Size(67, 62);
             this.btnNum9.TabIndex = 390;
-            this.btnNum9.Text = "Num 9";
+            //this.btnNum9.Text = "Num 9";
             this.btnNum9.UseVisualStyleBackColor = true;
             // 
             // btnNum7
@@ -1103,7 +1103,7 @@
             this.btnNum7.Name = "btnNum7";
             this.btnNum7.Size = new System.Drawing.Size(67, 62);
             this.btnNum7.TabIndex = 391;
-            this.btnNum7.Text = "Num 7";
+            //this.btnNum7.Text = "Num 7";
             this.btnNum7.UseVisualStyleBackColor = true;
             // 
             // btnNum8
@@ -1113,7 +1113,7 @@
             this.btnNum8.Name = "btnNum8";
             this.btnNum8.Size = new System.Drawing.Size(67, 62);
             this.btnNum8.TabIndex = 392;
-            this.btnNum8.Text = "Num 8";
+            //this.btnNum8.Text = "Num 8";
             this.btnNum8.UseVisualStyleBackColor = true;
             // 
             // btnNumMin
@@ -1123,7 +1123,7 @@
             this.btnNumMin.Name = "btnNumMin";
             this.btnNumMin.Size = new System.Drawing.Size(67, 62);
             this.btnNumMin.TabIndex = 393;
-            this.btnNumMin.Text = "Num -";
+            //this.btnNumMin.Text = "Num -";
             this.btnNumMin.UseVisualStyleBackColor = true;
             // 
             // btnNumPlus
@@ -1133,7 +1133,7 @@
             this.btnNumPlus.Name = "btnNumPlus";
             this.btnNumPlus.Size = new System.Drawing.Size(67, 130);
             this.btnNumPlus.TabIndex = 394;
-            this.btnNumPlus.Text = "Num +";
+            //this.btnNumPlus.Text = "Num +";
             this.btnNumPlus.UseVisualStyleBackColor = true;
             // 
             // btnNum6
@@ -1143,7 +1143,7 @@
             this.btnNum6.Name = "btnNum6";
             this.btnNum6.Size = new System.Drawing.Size(67, 62);
             this.btnNum6.TabIndex = 395;
-            this.btnNum6.Text = "Num 6";
+            //this.btnNum6.Text = "Num 6";
             this.btnNum6.UseVisualStyleBackColor = true;
             // 
             // btnNum4
@@ -1153,7 +1153,7 @@
             this.btnNum4.Name = "btnNum4";
             this.btnNum4.Size = new System.Drawing.Size(67, 62);
             this.btnNum4.TabIndex = 396;
-            this.btnNum4.Text = "Num 4";
+            //this.btnNum4.Text = "Num 4";
             this.btnNum4.UseVisualStyleBackColor = true;
             // 
             // btnNum5
@@ -1163,7 +1163,7 @@
             this.btnNum5.Name = "btnNum5";
             this.btnNum5.Size = new System.Drawing.Size(67, 62);
             this.btnNum5.TabIndex = 397;
-            this.btnNum5.Text = "Num 5";
+            //this.btnNum5.Text = "Num 5";
             this.btnNum5.UseVisualStyleBackColor = true;
             // 
             // btnNum3
@@ -1173,7 +1173,7 @@
             this.btnNum3.Name = "btnNum3";
             this.btnNum3.Size = new System.Drawing.Size(67, 62);
             this.btnNum3.TabIndex = 398;
-            this.btnNum3.Text = "Num 3";
+            //this.btnNum3.Text = "Num 3";
             this.btnNum3.UseVisualStyleBackColor = true;
             // 
             // btnNum1
@@ -1183,7 +1183,7 @@
             this.btnNum1.Name = "btnNum1";
             this.btnNum1.Size = new System.Drawing.Size(67, 62);
             this.btnNum1.TabIndex = 399;
-            this.btnNum1.Text = "Num 1";
+            //this.btnNum1.Text = "Num 1";
             this.btnNum1.UseVisualStyleBackColor = true;
             // 
             // btnNum2
@@ -1193,7 +1193,7 @@
             this.btnNum2.Name = "btnNum2";
             this.btnNum2.Size = new System.Drawing.Size(67, 62);
             this.btnNum2.TabIndex = 400;
-            this.btnNum2.Text = "Num 2";
+            //this.btnNum2.Text = "Num 2";
             this.btnNum2.UseVisualStyleBackColor = true;
             // 
             // btnNum0
@@ -1203,7 +1203,7 @@
             this.btnNum0.Name = "btnNum0";
             this.btnNum0.Size = new System.Drawing.Size(141, 62);
             this.btnNum0.TabIndex = 401;
-            this.btnNum0.Text = "Num 0";
+            //this.btnNum0.Text = "Num 0";
             this.btnNum0.UseVisualStyleBackColor = true;
             // 
             // btnNumPer
@@ -1213,7 +1213,7 @@
             this.btnNumPer.Name = "btnNumPer";
             this.btnNumPer.Size = new System.Drawing.Size(67, 62);
             this.btnNumPer.TabIndex = 402;
-            this.btnNumPer.Text = "Num .";
+            //this.btnNumPer.Text = "Num .";
             this.btnNumPer.UseVisualStyleBackColor = true;
             // 
             // btnNumEnt
@@ -1223,7 +1223,7 @@
             this.btnNumEnt.Name = "btnNumEnt";
             this.btnNumEnt.Size = new System.Drawing.Size(67, 130);
             this.btnNumEnt.TabIndex = 403;
-            this.btnNumEnt.Text = "Enter";
+            //this.btnNumEnt.Text = "Enter";
             this.btnNumEnt.UseVisualStyleBackColor = true;
             // 
             // btnEx1
@@ -1233,7 +1233,7 @@
             this.btnEx1.Name = "btnEx1";
             this.btnEx1.Size = new System.Drawing.Size(67, 62);
             this.btnEx1.TabIndex = 404;
-            this.btnEx1.Text = "1";
+            //this.btnEx1.Text = "1";
             this.btnEx1.UseVisualStyleBackColor = true;
             // 
             // btnEx2
@@ -1243,7 +1243,7 @@
             this.btnEx2.Name = "btnEx2";
             this.btnEx2.Size = new System.Drawing.Size(67, 62);
             this.btnEx2.TabIndex = 405;
-            this.btnEx2.Text = "2";
+            //this.btnEx2.Text = "2";
             this.btnEx2.UseVisualStyleBackColor = true;
             // 
             // btnEx4
@@ -1253,7 +1253,7 @@
             this.btnEx4.Name = "btnEx4";
             this.btnEx4.Size = new System.Drawing.Size(67, 62);
             this.btnEx4.TabIndex = 406;
-            this.btnEx4.Text = "4";
+            //this.btnEx4.Text = "4";
             this.btnEx4.UseVisualStyleBackColor = true;
             // 
             // btnEx5
@@ -1263,7 +1263,7 @@
             this.btnEx5.Name = "btnEx5";
             this.btnEx5.Size = new System.Drawing.Size(67, 62);
             this.btnEx5.TabIndex = 407;
-            this.btnEx5.Text = "5";
+            //this.btnEx5.Text = "5";
             this.btnEx5.UseVisualStyleBackColor = true;
             // 
             // btnEx6
@@ -1273,7 +1273,7 @@
             this.btnEx6.Name = "btnEx6";
             this.btnEx6.Size = new System.Drawing.Size(67, 62);
             this.btnEx6.TabIndex = 408;
-            this.btnEx6.Text = "6";
+            //this.btnEx6.Text = "6";
             this.btnEx6.UseVisualStyleBackColor = true;
             // 
             // btnEx7
@@ -1283,7 +1283,7 @@
             this.btnEx7.Name = "btnEx7";
             this.btnEx7.Size = new System.Drawing.Size(67, 62);
             this.btnEx7.TabIndex = 409;
-            this.btnEx7.Text = "7";
+            //this.btnEx7.Text = "7";
             this.btnEx7.UseVisualStyleBackColor = true;
             // 
             // btnEx8
@@ -1293,7 +1293,7 @@
             this.btnEx8.Name = "btnEx8";
             this.btnEx8.Size = new System.Drawing.Size(67, 62);
             this.btnEx8.TabIndex = 410;
-            this.btnEx8.Text = "8";
+            //this.btnEx8.Text = "8";
             this.btnEx8.UseVisualStyleBackColor = true;
             // 
             // btnEx9
@@ -1303,7 +1303,7 @@
             this.btnEx9.Name = "btnEx9";
             this.btnEx9.Size = new System.Drawing.Size(67, 62);
             this.btnEx9.TabIndex = 411;
-            this.btnEx9.Text = "9";
+            //this.btnEx9.Text = "9";
             this.btnEx9.UseVisualStyleBackColor = true;
             // 
             // btnEx0
@@ -1313,7 +1313,7 @@
             this.btnEx0.Name = "btnEx0";
             this.btnEx0.Size = new System.Drawing.Size(67, 62);
             this.btnEx0.TabIndex = 412;
-            this.btnEx0.Text = "0";
+            //this.btnEx0.Text = "0";
             this.btnEx0.UseVisualStyleBackColor = true;
             // 
             // btnEx3
@@ -1323,7 +1323,7 @@
             this.btnEx3.Name = "btnEx3";
             this.btnEx3.Size = new System.Drawing.Size(67, 62);
             this.btnEx3.TabIndex = 413;
-            this.btnEx3.Text = "3";
+            //this.btnEx3.Text = "3";
             this.btnEx3.UseVisualStyleBackColor = true;
             // 
             // pnlKeys
