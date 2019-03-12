@@ -26,7 +26,7 @@ namespace EasyKeeb_Configurator
             new Dictionary<string, string>()
         };
 
-        byte[,] keymap = new byte[5,116];
+        byte[,] keymap = new byte[5,117];
         string curBtn = "";
         int curLyr = 0;
 
@@ -78,10 +78,11 @@ namespace EasyKeeb_Configurator
             InitializeComponent();
 
             //fill keycode dictionary - assigns key strings to their keycodes
+            keycodes.Add("(None)", 0);
             keycodes.Add("Left Ctrl", 106);
             keycodes.Add("Left Shift", 1);
             keycodes.Add("Left Alt", 2);
-            keycodes.Add("Left Windows Key", 3);
+            keycodes.Add("Left Win", 3);
             keycodes.Add("A", 4);
             keycodes.Add("B", 5);
             keycodes.Add("C", 6);
@@ -148,9 +149,9 @@ namespace EasyKeeb_Configurator
             keycodes.Add("F10", 67);
             keycodes.Add("F11", 68);
             keycodes.Add("F12", 69);
-            keycodes.Add("Print Sc", 70);
+            keycodes.Add("PrntSc", 70);
             keycodes.Add("Scroll Lock", 71);
-            keycodes.Add("Pause/Break", 72);
+            keycodes.Add("Pause Break", 72);
             keycodes.Add("Insert", 73);
             keycodes.Add("Home", 74);
             keycodes.Add("Page Up", 75);
@@ -162,28 +163,28 @@ namespace EasyKeeb_Configurator
             keycodes.Add("↓", 81);
             keycodes.Add("↑", 82);
             keycodes.Add("Num Lock", 83);
-            keycodes.Add("Keypad /", 84);
-            keycodes.Add("Keypad *", 85);
-            keycodes.Add("Keypad -", 86);
-            keycodes.Add("Keypad +", 87);
-            keycodes.Add("Keypad Enter", 88);
-            keycodes.Add("Keypad 1", 89);
-            keycodes.Add("Keypad 2", 90);
-            keycodes.Add("Keypad 3", 91);
-            keycodes.Add("Keypad 4", 92);
-            keycodes.Add("Keypad 5", 93);
-            keycodes.Add("Keypad 6", 94);
-            keycodes.Add("Keypad 7", 95);
-            keycodes.Add("Keypad 8", 96);
-            keycodes.Add("Keypad 9", 97);
-            keycodes.Add("Keypad 0", 98);
-            keycodes.Add("Keypad .", 99);
+            keycodes.Add("Num /", 84);
+            keycodes.Add("Num *", 85);
+            keycodes.Add("Num -", 86);
+            keycodes.Add("Num +", 87);
+            keycodes.Add("Num Enter", 88);
+            keycodes.Add("Num 1", 89);
+            keycodes.Add("Num 2", 90);
+            keycodes.Add("Num 3", 91);
+            keycodes.Add("Num 4", 92);
+            keycodes.Add("Num 5", 93);
+            keycodes.Add("Num 6", 94);
+            keycodes.Add("Num 7", 95);
+            keycodes.Add("Num 8", 96);
+            keycodes.Add("Num 9", 97);
+            keycodes.Add("Num 0", 98);
+            keycodes.Add("Num .", 99);
             //keycodes.Add("NON_US", 100);  //NON_US key is not applicable and is only here for reference
             keycodes.Add("Menu", 101);
             keycodes.Add("Right Ctrl", 102);
             keycodes.Add("Right Shift", 103);
             keycodes.Add("Right Alt", 104);
-            keycodes.Add("Right Windows Key", 105);
+            keycodes.Add("Right Win", 105);
             keycodes.Add("Layer 1", 200);
             keycodes.Add("Layer 2", 201);
             keycodes.Add("Layer 3", 202);
@@ -313,6 +314,7 @@ namespace EasyKeeb_Configurator
 
             //fill keys dropdown
             cboKey.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboKey.Items.Add("(None)");
             foreach(KeyValuePair<string,byte> p in keycodes) cboKey.Items.Add(p.Key);
 
             //fill layers dropdown
@@ -492,6 +494,7 @@ namespace EasyKeeb_Configurator
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            GetLayerMap(curLyr);
             //set every value in keymap[,] to 0
             for (int i = 0; i < (5 * 116); i++) keymap[i % 5, i / 5] = 0;
             //assign values to keymap array
@@ -502,7 +505,6 @@ namespace EasyKeeb_Configurator
                     keymap[i, keys[p.Key]] = keycodes[p.Value];
                 }
             }
-
             //TODO: serial communication with Leonardo with keymap.
         }
     }
