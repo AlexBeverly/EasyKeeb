@@ -26,7 +26,7 @@ namespace EasyKeeb_Configurator
             new Dictionary<string, string>()
         };
 
-        byte[,] keymap = new byte[5,117];
+        byte[] keymap = new byte[5 * 117];
         string curBtn = "";
         int curLyr = 0;
 
@@ -495,17 +495,19 @@ namespace EasyKeeb_Configurator
         private void btnLoad_Click(object sender, EventArgs e)
         {
             GetLayerMap(curLyr);
-            //set every value in keymap[,] to 0
-            for (int i = 0; i < (5 * 116); i++) keymap[i % 5, i / 5] = 0;
+            //set every value in keymap[] to 0
+            for (int i = 0; i < (5 * 117); i++) keymap[i] = 0;
             //assign values to keymap array
             for (int i = 0; i < 5; i++)
-            { 
-                foreach(KeyValuePair<string,string> p in keymapStr[i])
+            {
+                foreach (KeyValuePair<string, string> p in keymapStr[i])
                 {
-                    keymap[i, keys[p.Key]] = keycodes[p.Value];
+                    keymap[keys[p.Key] + (i * 117)] = keycodes[p.Value];
                 }
             }
-            //TODO: serial communication with Leonardo with keymap.
+
+            Form2 frm2 = new Form2(keymap);
+            frm2.ShowDialog();
         }
     }
 }
